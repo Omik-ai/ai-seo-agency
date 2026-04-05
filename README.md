@@ -1,13 +1,7 @@
 <!-- markdownlint-disable MD033 -->
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Omik-ai/ai-seo-agency/main/.github/logo-dark.png">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Omik-ai/ai-seo-agency/main/.github/logo-light.png">
-    <img alt="AI SEO Agency" src="https://raw.githubusercontent.com/Omik-ai/ai-seo-agency/main/.github/logo-light.png" width="200">
-  </picture>
-</p>
-
-<h1 align="center">AI SEO Agency</h1>
+<h1 align="center">
+  <img src="https://img.shields.io/badge/🤖-AI%20SEO%20Agency-blue?style=for-the-badge" alt="AI SEO Agency">
+</h1>
 
 <p align="center">
   <a href="https://github.com/Omik-ai/ai-seo-agency/stargazers">

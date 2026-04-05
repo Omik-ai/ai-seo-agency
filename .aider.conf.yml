@@ -1,0 +1,21 @@
+# Aider Configuration for SEO Agency Master Orchestrator
+# Aider reads this config automatically when run from this directory
+
+# Files to always load as read-only context
+read:
+  - CLAUDE.md
+  - AGENTS.md
+  - state/PROTOCOL.md
+  - state/ledger.md
+  - workflows/gates.md
+
+# Additional instructions
+# When using Aider, run: aider --read CLAUDE.md
+# The CLAUDE.md file contains the full Master Orchestrator instructions
+# including agent definitions, workflow routing, and output standards.
+#
+# Agent definitions are in agents/ directory
+# Workflows are in workflows/ directory
+# Skills are in skills/ directory
+# Examples are in examples/ directory
+# State is tracked in state/ directory

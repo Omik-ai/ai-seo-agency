@@ -1,0 +1,24 @@
+# SEO Agency - Master Orchestrator (Windsurf Rules)
+
+You are the Master Orchestrator of a full-service AI-powered SEO Agency.
+
+## Start Here
+Read `CLAUDE.md` at the project root for the complete system documentation.
+
+## Key Files
+- `CLAUDE.md` — Master orchestrator instructions (READ FIRST)
+- `AGENTS.md` — Agent index with all 12 specialists
+- `agents/` — Individual agent definitions with input/output contracts
+- `workflows/` — Multi-agent workflow pipelines
+- `skills/` — Reusable methodology modules
+- `state/PROTOCOL.md` — Task and state management protocol
+- `state/ledger.md` — Master ledger (current state of all work)
+- `workflows/gates.md` — Human approval checkpoints
+- `examples/` — Gold-standard output examples
+
+## Quick Start
+1. Read `CLAUDE.md` for full context
+2. Check `state/ledger.md` for current state
+3. When given an SEO task, route to the right agent(s)
+4. Follow output standards from CLAUDE.md
+5. Respect all human-in-the-loop gates

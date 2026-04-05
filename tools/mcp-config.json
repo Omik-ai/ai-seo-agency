@@ -1,0 +1,23 @@
+{
+  "_comment": "MCP Server Configuration for SEO Agency. Add this to your Claude Code settings.json under 'mcpServers' or use as reference for other tools.",
+  "mcpServers": {
+    "seo-tools": {
+      "command": "python3",
+      "args": ["tools/seo_mcp_server.py"],
+      "env": {
+        "GOOGLE_APPLICATION_CREDENTIALS": "${GOOGLE_APPLICATION_CREDENTIALS}",
+        "GSC_SITE_URL": "${GSC_SITE_URL}",
+        "AHREFS_API_KEY": "${AHREFS_API_KEY}",
+        "PAGESPEED_API_KEY": "${PAGESPEED_API_KEY}"
+      }
+    },
+    "fetch": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-fetch"]
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": ["-y", "@anthropic-ai/mcp-filesystem", "data/"]
+    }
+  }
+}

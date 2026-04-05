@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+
+# Environment
+.env
+.env.local
+.env.*.local
+*.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# State & Data (optional - uncomment if you want to exclude runtime data)
+# data/
+# state/tasks/
+# state/handoffs/
+# state/ledger.md
+
+# Build outputs
+dist/
+build/
+*.egg
+
+# Misc
+*.bak
+*.tmp
+*.temp

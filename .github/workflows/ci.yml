@@ -1,0 +1,95 @@
+name: CI
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  commitlint:
+    name: Validate Commit Messages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install commitlint
+        run: npm install -g @commitlint/cli @commitlint/config-conventional
+
+      - name: Validate current commit (last commit) with commitlint
+        if: github.event_name == 'push'
+        run: commitlint --last --verbose
+
+      - name: Validate PR commits with commitlint
+        if: github.event_name == 'pull_request'
+        run: commitlint --from ${{ github.event.pull_request.base.sha }} --to ${{ github.event.pull_request.head.sha }} --verbose
+
+  branch-check:
+    name: Validate Branch Name
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch name
+        run: |
+          BRANCH_NAME=${{ github.head_ref || github.ref_name }}
+          echo "Branch: $BRANCH_NAME"
+          
+          # Validate branch name format
+          if [[ "$BRANCH_NAME" =~ ^(main|develop|feature/|bugfix/|release/|hotfix|experiments/) ]]; then
+            echo "✓ Branch name is valid"
+          else
+            echo "✗ Invalid branch name: $BRANCH_NAME"
+            echo "Valid prefixes: feature/, bugfix/, release/, hotfix, experiments/"
+            exit 1
+          fi
+
+  docs-check:
+    name: Validate Documentation
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required files exist
+        run: |
+          REQUIRED_FILES=("README.md" "CLAUDE.md" "AGENTS.md" "CONTRIBUTING.md" "SECURITY.md")
+          for file in "${REQUIRED_FILES[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "✗ Missing required file: $file"
+              exit 1
+            fi
+            echo "✓ Found: $file"
+          done
+
+  markdownlint:
+    name: Lint Markdown Files
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+
+      - name: Lint markdown files
+        run: |
+          markdownlint "**/*.md" --ignore node_modules --ignore .git
+
+  labels-check:
+    name: Validate PR Labels
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Check PR has labels
+        run: |
+          LABELS=${{ join(github.event.pull_request.labels.*.name, ',') }}
+          echo "Labels: $LABELS"
+          
+          if [ -z "$LABELS" ]; then
+            echo "✗ PR must have at least one label"
+            exit 1
+          fi
+          echo "✓ PR has labels"

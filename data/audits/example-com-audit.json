@@ -1,0 +1,815 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "aud_51cdb97b19",
+    "domain": "example.com",
+    "started_at": "2026-04-23T07:18:08Z",
+    "finished_at": "2026-04-23T07:18:11Z",
+    "duration_ms": 2368,
+    "engine_version": "audit_engine@0.1.0",
+    "urls_crawled": 1,
+    "urls_requested": 5,
+    "js_rendered": false,
+    "warnings": []
+  },
+  "health_score": 78,
+  "category_scores": {
+    "technical": 75,
+    "headings": 99,
+    "schema": 89,
+    "cwv": 50,
+    "eeat": 82,
+    "content": 82,
+    "linkgraph": 100,
+    "accessibility": 99,
+    "topical_authority": 0,
+    "serp": 84,
+    "aio": 99
+  },
+  "signals": [
+    {
+      "name": "technical",
+      "score": 75,
+      "findings": [
+        {
+          "id": "technical.robots.no_sitemap_ref",
+          "severity": "P2",
+          "title": "robots.txt missing Sitemap: directive",
+          "evidence": {
+            "url": "https://example.com/robots.txt",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add a `Sitemap: https://<domain>/sitemap.xml` line so crawlers discover your sitemap.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "technical.sitemap.missing",
+          "severity": "P1",
+          "title": "No XML sitemap found",
+          "evidence": {
+            "url": "https://example.com/sitemap.xml",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Generate and submit an XML sitemap (one URL per indexable page; <50k URLs per file).",
+          "effort": "M",
+          "google_algo_ref": "Indexing"
+        },
+        {
+          "id": "technical.canonical.missing",
+          "severity": "P1",
+          "title": "Missing canonical tag on https://example.com/",
+          "evidence": {
+            "url": "https://example.com/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add <link rel=\"canonical\" href=\"<absolute-url>\"> to the <head>.",
+          "effort": "S",
+          "google_algo_ref": "Duplicate content handling"
+        },
+        {
+          "id": "technical.hsts.missing",
+          "severity": "P3",
+          "title": "HSTS header missing on most pages",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": "1/1"
+          },
+          "recommendation": "Add `Strict-Transport-Security: max-age=31536000; includeSubDomains` response header.",
+          "effort": "S",
+          "google_algo_ref": null
+        }
+      ],
+      "data": {
+        "robots_disallows": [],
+        "has_robots_txt": true,
+        "sitemap_url_count": 0,
+        "pages_checked": 1,
+        "status_bad_count": 0,
+        "redirect_chain_count": 0,
+        "missing_canonical_count": 1,
+        "cross_domain_canonical_count": 0,
+        "xrobots_noindex_count": 0,
+        "http_pages_count": 0,
+        "missing_hsts_count": 1,
+        "canonical_samples": []
+      }
+    },
+    {
+      "name": "headings",
+      "score": 99,
+      "findings": [
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://example.com/: main, header, footer, nav",
+          "evidence": {
+            "url": "https://example.com/",
+            "snippet": null,
+            "value": [
+              "main",
+              "header",
+              "footer",
+              "nav"
+            ]
+          },
+          "recommendation": "Wrap content in <main>, <header>, <footer>, <nav> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        }
+      ],
+      "data": {
+        "per_page": [
+          {
+            "url": "https://example.com/",
+            "h1_count": 1,
+            "h1_texts": [
+              "Example Domain"
+            ],
+            "total_headings": 1,
+            "semantic_tags": {
+              "main": false,
+              "article": false,
+              "nav": false,
+              "header": false,
+              "footer": false,
+              "section": false
+            },
+            "level_order": [
+              1
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "schema",
+      "score": 89,
+      "findings": [
+        {
+          "id": "schema.homepage.no_organization",
+          "severity": "P1",
+          "title": "Homepage missing Organization (or LocalBusiness) schema",
+          "evidence": {
+            "url": "https://example.com/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add Organization JSON-LD with name, url, logo, sameAs (social profiles).",
+          "effort": "S",
+          "google_algo_ref": "Entity / Knowledge Graph"
+        },
+        {
+          "id": "schema.homepage.no_website",
+          "severity": "P3",
+          "title": "Homepage missing WebSite schema",
+          "evidence": {
+            "url": "https://example.com/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add WebSite JSON-LD with SearchAction to enable sitelinks searchbox.",
+          "effort": "S",
+          "google_algo_ref": null
+        }
+      ],
+      "data": {
+        "type_counts": {},
+        "pages_with_any_schema": 0,
+        "pages_analyzed": 1,
+        "per_page": [
+          {
+            "url": "https://example.com/",
+            "kind": "homepage",
+            "types": [],
+            "jsonld_count": 0,
+            "microdata_count": 0,
+            "rdfa_count": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "cwv",
+      "score": 50,
+      "findings": [
+        {
+          "id": "cwv.psi.disabled",
+          "severity": "P3",
+          "title": "Core Web Vitals check skipped (PSI disabled)",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Re-run without --no-psi and with a PAGESPEED_API_KEY for CWV data.",
+          "effort": "S",
+          "google_algo_ref": null
+        }
+      ],
+      "data": {
+        "pages": [],
+        "enabled": false,
+        "reason": "--no-psi flag"
+      }
+    },
+    {
+      "name": "eeat",
+      "score": 82,
+      "findings": [
+        {
+          "id": "eeat.org.missing",
+          "severity": "P1",
+          "title": "No Organization schema on homepage",
+          "evidence": {
+            "url": "https://example.com/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add Organization JSON-LD with name, url, logo, sameAs.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Authoritativeness"
+        },
+        {
+          "id": "eeat.contact.missing",
+          "severity": "P2",
+          "title": "No Contact page or mailto: link found",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add a /contact page with business email + physical address. Basic trust signal.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Trustworthiness"
+        },
+        {
+          "id": "eeat.about.missing",
+          "severity": "P2",
+          "title": "No About page found",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add an /about page covering team, history, credentials. Expertise signal.",
+          "effort": "M",
+          "google_algo_ref": "E-E-A-T / Expertise"
+        }
+      ],
+      "data": {
+        "contact_page_found": false,
+        "about_page_found": false,
+        "article_pages_count": 0,
+        "articles_with_author": 0,
+        "articles_with_author_sameAs": 0,
+        "articles_with_dates": 0,
+        "articles_stale": 0,
+        "articles_byline_visible": 0
+      }
+    },
+    {
+      "name": "content",
+      "score": 82,
+      "findings": [
+        {
+          "id": "content.keyword.stuffing",
+          "severity": "P1",
+          "title": "Possible keyword stuffing ('domain' 20.0%) on https://example.com/",
+          "evidence": {
+            "url": "https://example.com/",
+            "snippet": null,
+            "value": {
+              "domain": 20.0
+            }
+          },
+          "recommendation": "Reduce keyword density to <3%. Use synonyms and natural language.",
+          "effort": "M",
+          "google_algo_ref": "SpamBrain / Keyword Stuffing"
+        },
+        {
+          "id": "content.title.short",
+          "severity": "P2",
+          "title": "Title too short (14 chars) on https://example.com/",
+          "evidence": {
+            "url": "https://example.com/",
+            "snippet": null,
+            "value": "Example Domain"
+          },
+          "recommendation": "Expand title to 30\u201360 chars. Include primary keyword + brand.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.meta_desc.missing",
+          "severity": "P2",
+          "title": "Missing meta description on https://example.com/",
+          "evidence": {
+            "url": "https://example.com/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add a 70\u2013160 char meta description. Not a ranking factor, but boosts CTR.",
+          "effort": "S",
+          "google_algo_ref": null
+        }
+      ],
+      "data": {
+        "per_page": [
+          {
+            "url": "https://example.com/",
+            "title": "Example Domain",
+            "title_len": 14,
+            "meta_desc": "",
+            "meta_desc_len": 0,
+            "word_count": 21,
+            "flesch": null,
+            "keyword_density": {
+              "domain": 20.0,
+              "example": 13.33,
+              "use": 13.33,
+              "documentation": 6.67,
+              "examples": 6.67,
+              "without": 6.67,
+              "needing": 6.67,
+              "permission": 6.67,
+              "avoid": 6.67,
+              "operations": 6.67
+            },
+            "entities": {
+              "PERSON": [
+                "Example Domain"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "linkgraph",
+      "score": 100,
+      "findings": [],
+      "data": {
+        "nodes": 1,
+        "edges": 0,
+        "orphans_count": 0,
+        "orphans_sample": [],
+        "max_depth": 0,
+        "deep_pages_count": 0,
+        "generic_anchor_pct": 0,
+        "top_anchors": []
+      }
+    },
+    {
+      "name": "accessibility",
+      "score": 99,
+      "findings": [
+        {
+          "id": "accessibility.skip_link.missing",
+          "severity": "P3",
+          "title": "No skip-to-content link found on any page",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add a 'Skip to main content' link as the first focusable element for keyboard navigation.",
+          "effort": "S",
+          "google_algo_ref": "Accessibility / WCAG 2.4.1"
+        }
+      ],
+      "data": {
+        "per_page": [
+          {
+            "url": "https://example.com/",
+            "lang": "en",
+            "images": 0,
+            "images_missing_alt": 0,
+            "inputs": 0,
+            "inputs_missing_label": 0,
+            "interactive_missing_name": 0
+          }
+        ],
+        "total_images": 0,
+        "images_missing_alt": 0,
+        "total_inputs": 0,
+        "inputs_missing_label": 0,
+        "skip_link_found": false,
+        "lang_found": true,
+        "interactive_missing_name": 0,
+        "total_interactive": 1
+      }
+    },
+    {
+      "name": "topical_authority",
+      "score": null,
+      "findings": [],
+      "data": {
+        "topics": [
+          "root"
+        ],
+        "topic_page_counts": {
+          "root": 1
+        },
+        "internal_link_density": {},
+        "topic_cohesion": {},
+        "topic_freshness": {
+          "root": -1
+        }
+      }
+    },
+    {
+      "name": "serp",
+      "score": 84,
+      "findings": [
+        {
+          "id": "serp.brand.missing",
+          "severity": "P1",
+          "title": "Domain not in top 10 for brand query 'example'",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Build brand signals (Organization schema, sameAs, social profiles) and earn branded mentions.",
+          "effort": "M",
+          "google_algo_ref": "Entity / Knowledge Graph"
+        },
+        {
+          "id": "serp.knowledge_panel.missing",
+          "severity": "P2",
+          "title": "No Knowledge Panel detected for brand query",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add Organization schema with sameAs links to social profiles. Submit to Wikidata/Wikipedia if notable.",
+          "effort": "L",
+          "google_algo_ref": "Knowledge Graph"
+        },
+        {
+          "id": "serp.featured_snippet.missing",
+          "severity": "P3",
+          "title": "No featured snippet detected for brand query",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add FAQPage schema and concise definitional paragraphs to capture featured snippets.",
+          "effort": "M",
+          "google_algo_ref": "Featured Snippets"
+        },
+        {
+          "id": "serp.paa.missing",
+          "severity": "P3",
+          "title": "No People Also Ask block detected",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add question-style H2s and direct answers to trigger PAA expansion.",
+          "effort": "M",
+          "google_algo_ref": "People Also Ask"
+        }
+      ],
+      "data": {
+        "fetch_ok": true,
+        "brand_query": "example",
+        "organic_results_count": 0,
+        "domain_in_top10": false,
+        "knowledge_panel": false,
+        "featured_snippet": false,
+        "people_also_ask": false
+      }
+    },
+    {
+      "name": "aio",
+      "score": 99,
+      "findings": [
+        {
+          "id": "aio.faq.missing",
+          "severity": "P3",
+          "title": "No FAQPage schema found anywhere on the site",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add an FAQ section with FAQPage schema to pages answering common questions. High AI-Overview pull rate.",
+          "effort": "M",
+          "google_algo_ref": "AI Overviews / Rich Results: FAQ"
+        }
+      ],
+      "data": {
+        "has_faq_schema": false,
+        "has_howto_schema": false,
+        "article_count": 0,
+        "articles_with_question_headings": 0,
+        "articles_with_tldr": 0
+      }
+    }
+  ],
+  "top_findings_by_priority": {
+    "P0": [],
+    "P1": [
+      {
+        "id": "technical.sitemap.missing",
+        "severity": "P1",
+        "title": "No XML sitemap found",
+        "evidence": {
+          "url": "https://example.com/sitemap.xml",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Generate and submit an XML sitemap (one URL per indexable page; <50k URLs per file).",
+        "effort": "M",
+        "google_algo_ref": "Indexing",
+        "signal": "technical"
+      },
+      {
+        "id": "technical.canonical.missing",
+        "severity": "P1",
+        "title": "Missing canonical tag on https://example.com/",
+        "evidence": {
+          "url": "https://example.com/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add <link rel=\"canonical\" href=\"<absolute-url>\"> to the <head>.",
+        "effort": "S",
+        "google_algo_ref": "Duplicate content handling",
+        "signal": "technical"
+      },
+      {
+        "id": "schema.homepage.no_organization",
+        "severity": "P1",
+        "title": "Homepage missing Organization (or LocalBusiness) schema",
+        "evidence": {
+          "url": "https://example.com/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add Organization JSON-LD with name, url, logo, sameAs (social profiles).",
+        "effort": "S",
+        "google_algo_ref": "Entity / Knowledge Graph",
+        "signal": "schema"
+      },
+      {
+        "id": "eeat.org.missing",
+        "severity": "P1",
+        "title": "No Organization schema on homepage",
+        "evidence": {
+          "url": "https://example.com/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add Organization JSON-LD with name, url, logo, sameAs.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Authoritativeness",
+        "signal": "eeat"
+      },
+      {
+        "id": "content.keyword.stuffing",
+        "severity": "P1",
+        "title": "Possible keyword stuffing ('domain' 20.0%) on https://example.com/",
+        "evidence": {
+          "url": "https://example.com/",
+          "snippet": null,
+          "value": {
+            "domain": 20.0
+          }
+        },
+        "recommendation": "Reduce keyword density to <3%. Use synonyms and natural language.",
+        "effort": "M",
+        "google_algo_ref": "SpamBrain / Keyword Stuffing",
+        "signal": "content"
+      },
+      {
+        "id": "serp.brand.missing",
+        "severity": "P1",
+        "title": "Domain not in top 10 for brand query 'example'",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Build brand signals (Organization schema, sameAs, social profiles) and earn branded mentions.",
+        "effort": "M",
+        "google_algo_ref": "Entity / Knowledge Graph",
+        "signal": "serp"
+      }
+    ],
+    "P2": [
+      {
+        "id": "technical.robots.no_sitemap_ref",
+        "severity": "P2",
+        "title": "robots.txt missing Sitemap: directive",
+        "evidence": {
+          "url": "https://example.com/robots.txt",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add a `Sitemap: https://<domain>/sitemap.xml` line so crawlers discover your sitemap.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "technical"
+      },
+      {
+        "id": "eeat.contact.missing",
+        "severity": "P2",
+        "title": "No Contact page or mailto: link found",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add a /contact page with business email + physical address. Basic trust signal.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Trustworthiness",
+        "signal": "eeat"
+      },
+      {
+        "id": "eeat.about.missing",
+        "severity": "P2",
+        "title": "No About page found",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add an /about page covering team, history, credentials. Expertise signal.",
+        "effort": "M",
+        "google_algo_ref": "E-E-A-T / Expertise",
+        "signal": "eeat"
+      },
+      {
+        "id": "content.title.short",
+        "severity": "P2",
+        "title": "Title too short (14 chars) on https://example.com/",
+        "evidence": {
+          "url": "https://example.com/",
+          "snippet": null,
+          "value": "Example Domain"
+        },
+        "recommendation": "Expand title to 30\u201360 chars. Include primary keyword + brand.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.meta_desc.missing",
+        "severity": "P2",
+        "title": "Missing meta description on https://example.com/",
+        "evidence": {
+          "url": "https://example.com/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add a 70\u2013160 char meta description. Not a ranking factor, but boosts CTR.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "serp.knowledge_panel.missing",
+        "severity": "P2",
+        "title": "No Knowledge Panel detected for brand query",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add Organization schema with sameAs links to social profiles. Submit to Wikidata/Wikipedia if notable.",
+        "effort": "L",
+        "google_algo_ref": "Knowledge Graph",
+        "signal": "serp"
+      }
+    ],
+    "P3": [
+      {
+        "id": "technical.hsts.missing",
+        "severity": "P3",
+        "title": "HSTS header missing on most pages",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": "1/1"
+        },
+        "recommendation": "Add `Strict-Transport-Security: max-age=31536000; includeSubDomains` response header.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "technical"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://example.com/: main, header, footer, nav",
+        "evidence": {
+          "url": "https://example.com/",
+          "snippet": null,
+          "value": [
+            "main",
+            "header",
+            "footer",
+            "nav"
+          ]
+        },
+        "recommendation": "Wrap content in <main>, <header>, <footer>, <nav> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "schema.homepage.no_website",
+        "severity": "P3",
+        "title": "Homepage missing WebSite schema",
+        "evidence": {
+          "url": "https://example.com/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add WebSite JSON-LD with SearchAction to enable sitelinks searchbox.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "schema"
+      },
+      {
+        "id": "cwv.psi.disabled",
+        "severity": "P3",
+        "title": "Core Web Vitals check skipped (PSI disabled)",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Re-run without --no-psi and with a PAGESPEED_API_KEY for CWV data.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "cwv"
+      },
+      {
+        "id": "accessibility.skip_link.missing",
+        "severity": "P3",
+        "title": "No skip-to-content link found on any page",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add a 'Skip to main content' link as the first focusable element for keyboard navigation.",
+        "effort": "S",
+        "google_algo_ref": "Accessibility / WCAG 2.4.1",
+        "signal": "accessibility"
+      },
+      {
+        "id": "serp.featured_snippet.missing",
+        "severity": "P3",
+        "title": "No featured snippet detected for brand query",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add FAQPage schema and concise definitional paragraphs to capture featured snippets.",
+        "effort": "M",
+        "google_algo_ref": "Featured Snippets",
+        "signal": "serp"
+      },
+      {
+        "id": "serp.paa.missing",
+        "severity": "P3",
+        "title": "No People Also Ask block detected",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add question-style H2s and direct answers to trigger PAA expansion.",
+        "effort": "M",
+        "google_algo_ref": "People Also Ask",
+        "signal": "serp"
+      },
+      {
+        "id": "aio.faq.missing",
+        "severity": "P3",
+        "title": "No FAQPage schema found anywhere on the site",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add an FAQ section with FAQPage schema to pages answering common questions. High AI-Overview pull rate.",
+        "effort": "M",
+        "google_algo_ref": "AI Overviews / Rich Results: FAQ",
+        "signal": "aio"
+      }
+    ]
+  }
+}

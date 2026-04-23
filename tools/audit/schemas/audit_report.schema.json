@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://ai-seo-agency/schemas/audit_report.schema.json",
+  "title": "SEO Audit Report",
+  "type": "object",
+  "required": ["schema_version", "run", "health_score", "category_scores", "signals", "top_findings_by_priority"],
+  "properties": {
+    "schema_version": {"type": "string"},
+    "run": {
+      "type": "object",
+      "required": ["id", "domain", "started_at", "finished_at", "duration_ms", "engine_version", "urls_crawled", "urls_requested", "js_rendered", "warnings"],
+      "properties": {
+        "id": {"type": "string"},
+        "domain": {"type": "string"},
+        "started_at": {"type": "string", "format": "date-time"},
+        "finished_at": {"type": "string", "format": "date-time"},
+        "duration_ms": {"type": "integer", "minimum": 0},
+        "engine_version": {"type": "string"},
+        "urls_crawled": {"type": "integer", "minimum": 0},
+        "urls_requested": {"type": "integer", "minimum": 1},
+        "js_rendered": {"type": "boolean"},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "health_score": {"type": "integer", "minimum": 0, "maximum": 100},
+    "category_scores": {
+      "type": "object",
+      "additionalProperties": {"type": "integer", "minimum": 0, "maximum": 100}
+    },
+    "signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "score", "findings", "data"],
+        "properties": {
+          "name": {"type": "string"},
+          "score": {"type": "integer", "minimum": 0, "maximum": 100},
+          "findings": {"type": "array", "items": {"$ref": "#/definitions/Finding"}},
+          "data": {"type": "object"}
+        }
+      }
+    },
+    "top_findings_by_priority": {
+      "type": "object",
+      "properties": {
+        "P0": {"type": "array", "items": {"$ref": "#/definitions/Finding"}},
+        "P1": {"type": "array", "items": {"$ref": "#/definitions/Finding"}},
+        "P2": {"type": "array", "items": {"$ref": "#/definitions/Finding"}},
+        "P3": {"type": "array", "items": {"$ref": "#/definitions/Finding"}}
+      }
+    }
+  },
+  "definitions": {
+    "Finding": {
+      "type": "object",
+      "required": ["id", "severity", "title", "evidence", "recommendation", "effort"],
+      "properties": {
+        "id": {"type": "string"},
+        "severity": {"enum": ["P0", "P1", "P2", "P3"]},
+        "title": {"type": "string"},
+        "evidence": {
+          "type": "object",
+          "required": ["url"],
+          "properties": {
+            "url": {"type": "string"},
+            "snippet": {"type": ["string", "null"]},
+            "value": {}
+          }
+        },
+        "recommendation": {"type": "string"},
+        "effort": {"enum": ["S", "M", "L"]},
+        "google_algo_ref": {"type": ["string", "null"]},
+        "signal": {"type": "string"}
+      }
+    }
+  }
+}

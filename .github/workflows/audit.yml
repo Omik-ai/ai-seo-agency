@@ -1,0 +1,52 @@
+name: SEO Audit Engine CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint with ruff
+        run: ruff check tools/ tests/
+
+      - name: Type check with mypy
+        run: mypy tools/ tests/ --ignore-missing-imports
+
+      - name: Run pytest
+        run: pytest tests/ -v --tb=short
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+
+      - name: Audit example.com
+        run: python tools/audit_engine.py example.com --max-urls 10 --no-psi
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+
+      - name: QA Validate
+        run: python -c "
+import json, sys
+from pathlib import Path
+from tools.qa.validator import validate_file
+latest = sorted(Path('data/audits').glob('*.json'))[-1]
+result = validate_file(latest)
+print(json.dumps(result.details, indent=2))
+if not result.passed:
+    print('QA FAILED:', result.issues)
+    sys.exit(1)
+print('QA PASSED — score:', result.score)
+"

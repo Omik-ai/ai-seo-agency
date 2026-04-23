@@ -1,0 +1,2427 @@
+{
+  "schema_version": "1.0",
+  "run": {
+    "id": "aud_801dbfb648",
+    "domain": "iamamitkumar.dev",
+    "started_at": "2026-04-23T02:32:52Z",
+    "finished_at": "2026-04-23T02:32:58Z",
+    "duration_ms": 6115,
+    "engine_version": "audit_engine@0.1.0",
+    "urls_crawled": 12,
+    "urls_requested": 12,
+    "js_rendered": false,
+    "warnings": []
+  },
+  "health_score": 59,
+  "category_scores": {
+    "technical": 90,
+    "headings": 0,
+    "schema": 87,
+    "cwv": 50,
+    "eeat": 62,
+    "content": 5,
+    "linkgraph": 100,
+    "aio": 86
+  },
+  "signals": [
+    {
+      "name": "technical",
+      "score": 90,
+      "findings": [
+        {
+          "id": "technical.canonical.missing",
+          "severity": "P1",
+          "title": "Missing canonical tag on https://iamamitkumar.dev/newsletter",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/newsletter",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add <link rel=\"canonical\" href=\"<absolute-url>\"> to the <head>.",
+          "effort": "S",
+          "google_algo_ref": "Duplicate content handling"
+        }
+      ],
+      "data": {
+        "robots_disallows": [],
+        "has_robots_txt": true,
+        "sitemap_url_count": 10,
+        "pages_checked": 12,
+        "status_bad_count": 0,
+        "redirect_chain_count": 0,
+        "missing_canonical_count": 1,
+        "cross_domain_canonical_count": 0,
+        "xrobots_noindex_count": 0,
+        "http_pages_count": 0,
+        "missing_hsts_count": 0,
+        "canonical_samples": [
+          [
+            "https://iamamitkumar.dev/",
+            "https://iamamitkumar.dev"
+          ],
+          [
+            "https://iamamitkumar.dev/blog",
+            "https://iamamitkumar.dev/blog"
+          ],
+          [
+            "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production"
+          ],
+          [
+            "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment"
+          ],
+          [
+            "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "headings",
+      "score": 0,
+      "findings": [
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/blog",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/blog: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.multiple",
+          "severity": "P1",
+          "title": "7 H1s on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "snippet": null,
+            "value": [
+              "Expected: openclaw/2026.x.x node/v22.x.x",
+              "Paste your bot token when prompted",
+              "telegram  \u2713 connected  last_msg: never"
+            ]
+          },
+          "recommendation": "Keep exactly one H1 per page. Demote the rest to H2.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/blog/what-is-inside-claude-code: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/inspiration",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/inspiration",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/inspiration: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/inspiration",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/sponsor",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/sponsor",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/sponsor: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/sponsor",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/tweets",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/tweets",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/tweets: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/tweets",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.h1.missing",
+          "severity": "P0",
+          "title": "No H1 on https://iamamitkumar.dev/workflow",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/workflow",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+          "effort": "S",
+          "google_algo_ref": "On-page signals / Helpful Content"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/workflow: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/workflow",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "headings.skipped_level",
+          "severity": "P2",
+          "title": "1 skipped heading level(s) on https://iamamitkumar.dev/newsletter",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/newsletter",
+            "snippet": null,
+            "value": [
+              2,
+              1,
+              3,
+              3
+            ]
+          },
+          "recommendation": "Don't skip levels (e.g., H2 \u2192 H4). Go in order: H1 \u2192 H2 \u2192 H3 \u2026",
+          "effort": "S",
+          "google_algo_ref": "Accessibility (WCAG 1.3.1) + content parsing"
+        },
+        {
+          "id": "headings.semantic.missing",
+          "severity": "P3",
+          "title": "Missing semantic tags on https://iamamitkumar.dev/newsletter: header",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/newsletter",
+            "snippet": null,
+            "value": [
+              "header"
+            ]
+          },
+          "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+          "effort": "M",
+          "google_algo_ref": null
+        }
+      ],
+      "data": {
+        "per_page": [
+          {
+            "url": "https://iamamitkumar.dev/",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 5,
+            "semantic_tags": {
+              "main": true,
+              "article": false,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": true
+            },
+            "level_order": [
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 1,
+            "semantic_tags": {
+              "main": true,
+              "article": false,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": true
+            },
+            "level_order": [
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 8,
+            "semantic_tags": {
+              "main": true,
+              "article": true,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": true
+            },
+            "level_order": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 2,
+            "semantic_tags": {
+              "main": true,
+              "article": true,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": true
+            },
+            "level_order": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 2,
+            "semantic_tags": {
+              "main": true,
+              "article": true,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": true
+            },
+            "level_order": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "h1_count": 7,
+            "h1_texts": [
+              "Expected: openclaw/2026.x.x node/v22.x.x",
+              "Paste your bot token when prompted",
+              "telegram  \u2713 connected  last_msg: never"
+            ],
+            "total_headings": 17,
+            "semantic_tags": {
+              "main": true,
+              "article": true,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": true
+            },
+            "level_order": [
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              2,
+              2,
+              2,
+              2,
+              2,
+              1,
+              1,
+              1,
+              1,
+              2,
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 12,
+            "semantic_tags": {
+              "main": true,
+              "article": true,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": true
+            },
+            "level_order": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/inspiration",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 0,
+            "semantic_tags": {
+              "main": true,
+              "article": false,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": false
+            },
+            "level_order": []
+          },
+          {
+            "url": "https://iamamitkumar.dev/sponsor",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 2,
+            "semantic_tags": {
+              "main": true,
+              "article": false,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": true
+            },
+            "level_order": [
+              2,
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/tweets",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 1,
+            "semantic_tags": {
+              "main": true,
+              "article": true,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": false
+            },
+            "level_order": [
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/workflow",
+            "h1_count": 0,
+            "h1_texts": [],
+            "total_headings": 6,
+            "semantic_tags": {
+              "main": true,
+              "article": false,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": false
+            },
+            "level_order": [
+              2,
+              2,
+              2,
+              2,
+              2,
+              2
+            ]
+          },
+          {
+            "url": "https://iamamitkumar.dev/newsletter",
+            "h1_count": 1,
+            "h1_texts": [
+              "Get smarter aboutAI Agents"
+            ],
+            "total_headings": 4,
+            "semantic_tags": {
+              "main": true,
+              "article": false,
+              "nav": true,
+              "header": false,
+              "footer": true,
+              "section": false
+            },
+            "level_order": [
+              2,
+              1,
+              3,
+              3
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "schema",
+      "score": 87,
+      "findings": [
+        {
+          "id": "schema.homepage.no_organization",
+          "severity": "P1",
+          "title": "Homepage missing Organization (or LocalBusiness) schema",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add Organization JSON-LD with name, url, logo, sameAs (social profiles).",
+          "effort": "S",
+          "google_algo_ref": "Entity / Knowledge Graph"
+        },
+        {
+          "id": "schema.homepage.no_website",
+          "severity": "P3",
+          "title": "Homepage missing WebSite schema",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add WebSite JSON-LD with SearchAction to enable sitelinks searchbox.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "schema.blogposting.missing_recommended.image",
+          "severity": "P3",
+          "title": "BlogPosting schema missing recommended property: image",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add `image` to the BlogPosting JSON-LD block for stronger rich-result eligibility.",
+          "effort": "S",
+          "google_algo_ref": "Rich Results: BlogPosting"
+        },
+        {
+          "id": "schema.blogposting.missing_recommended.image",
+          "severity": "P3",
+          "title": "BlogPosting schema missing recommended property: image",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add `image` to the BlogPosting JSON-LD block for stronger rich-result eligibility.",
+          "effort": "S",
+          "google_algo_ref": "Rich Results: BlogPosting"
+        }
+      ],
+      "data": {
+        "type_counts": {
+          "Blog": 1,
+          "BlogPosting": 5
+        },
+        "pages_with_any_schema": 6,
+        "pages_analyzed": 12,
+        "per_page": [
+          {
+            "url": "https://iamamitkumar.dev/",
+            "kind": "homepage",
+            "types": [],
+            "item_count": 0
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog",
+            "kind": "other",
+            "types": [
+              "Blog"
+            ],
+            "item_count": 1
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "kind": "article",
+            "types": [
+              "BlogPosting"
+            ],
+            "item_count": 1
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "kind": "article",
+            "types": [
+              "BlogPosting"
+            ],
+            "item_count": 1
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "kind": "article",
+            "types": [
+              "BlogPosting"
+            ],
+            "item_count": 1
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "kind": "article",
+            "types": [
+              "BlogPosting"
+            ],
+            "item_count": 1
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "kind": "article",
+            "types": [
+              "BlogPosting"
+            ],
+            "item_count": 1
+          },
+          {
+            "url": "https://iamamitkumar.dev/inspiration",
+            "kind": "other",
+            "types": [],
+            "item_count": 0
+          },
+          {
+            "url": "https://iamamitkumar.dev/sponsor",
+            "kind": "other",
+            "types": [],
+            "item_count": 0
+          },
+          {
+            "url": "https://iamamitkumar.dev/tweets",
+            "kind": "other",
+            "types": [],
+            "item_count": 0
+          },
+          {
+            "url": "https://iamamitkumar.dev/workflow",
+            "kind": "other",
+            "types": [],
+            "item_count": 0
+          },
+          {
+            "url": "https://iamamitkumar.dev/newsletter",
+            "kind": "other",
+            "types": [],
+            "item_count": 0
+          }
+        ]
+      }
+    },
+    {
+      "name": "cwv",
+      "score": 50,
+      "findings": [
+        {
+          "id": "cwv.psi.disabled",
+          "severity": "P3",
+          "title": "Core Web Vitals check skipped (PSI disabled)",
+          "evidence": {
+            "url": "https://iamamitkumar.dev",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Re-run without --no-psi and with a PAGESPEED_API_KEY for CWV data.",
+          "effort": "S",
+          "google_algo_ref": null
+        }
+      ],
+      "data": {
+        "pages": [],
+        "enabled": false,
+        "reason": "--no-psi flag"
+      }
+    },
+    {
+      "name": "eeat",
+      "score": 62,
+      "findings": [
+        {
+          "id": "eeat.org.missing",
+          "severity": "P1",
+          "title": "No Organization schema on homepage",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add Organization JSON-LD with name, url, logo, sameAs.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Authoritativeness"
+        },
+        {
+          "id": "eeat.contact.missing",
+          "severity": "P2",
+          "title": "No Contact page or mailto: link found",
+          "evidence": {
+            "url": "https://iamamitkumar.dev",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add a /contact page with business email + physical address. Basic trust signal.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Trustworthiness"
+        },
+        {
+          "id": "eeat.about.missing",
+          "severity": "P2",
+          "title": "No About page found",
+          "evidence": {
+            "url": "https://iamamitkumar.dev",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add an /about page covering team, history, credentials. Expertise signal.",
+          "effort": "M",
+          "google_algo_ref": "E-E-A-T / Expertise"
+        },
+        {
+          "id": "eeat.author.missing_sameAs",
+          "severity": "P2",
+          "title": "Author on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production has no sameAs link",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "snippet": null,
+            "value": "Amit Kumar"
+          },
+          "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Author entity"
+        },
+        {
+          "id": "eeat.author.missing_sameAs",
+          "severity": "P2",
+          "title": "Author on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment has no sameAs link",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "snippet": null,
+            "value": "Amit Kumar"
+          },
+          "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Author entity"
+        },
+        {
+          "id": "eeat.author.missing_sameAs",
+          "severity": "P2",
+          "title": "Author on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents has no sameAs link",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "snippet": null,
+            "value": "Amit Kumar"
+          },
+          "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Author entity"
+        },
+        {
+          "id": "eeat.author.missing_sameAs",
+          "severity": "P2",
+          "title": "Author on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026 has no sameAs link",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "snippet": null,
+            "value": "Amit Kumar"
+          },
+          "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Author entity"
+        },
+        {
+          "id": "eeat.author.missing_sameAs",
+          "severity": "P2",
+          "title": "Author on https://iamamitkumar.dev/blog/what-is-inside-claude-code has no sameAs link",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "snippet": null,
+            "value": "Amit Kumar"
+          },
+          "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+          "effort": "S",
+          "google_algo_ref": "E-E-A-T / Author entity"
+        }
+      ],
+      "data": {
+        "contact_page_found": false,
+        "about_page_found": false,
+        "article_pages_count": 5,
+        "articles_with_author": 5,
+        "articles_with_author_sameAs": 0,
+        "articles_with_dates": 5,
+        "articles_stale": 0,
+        "articles_byline_visible": 5
+      }
+    },
+    {
+      "name": "content",
+      "score": 5,
+      "findings": [
+        {
+          "id": "content.thin",
+          "severity": "P1",
+          "title": "Thin content (108 words) on https://iamamitkumar.dev/blog",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog",
+            "snippet": null,
+            "value": 108
+          },
+          "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+          "effort": "L",
+          "google_algo_ref": "Helpful Content"
+        },
+        {
+          "id": "content.title.long",
+          "severity": "P2",
+          "title": "Title truncated risk (98 chars) on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "snippet": null,
+            "value": "Why Your AI Agent Pilot Never Makes It to Production (And How to Fix It) - Amit Kumar | Amit Kumar"
+          },
+          "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.meta_desc.long",
+          "severity": "P3",
+          "title": "Meta description long (171 chars) on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Trim to \u2264160 chars to avoid SERP truncation.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.title.long",
+          "severity": "P2",
+          "title": "Title truncated risk (112 chars) on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "snippet": null,
+            "value": "Building Enterprise-Grade Production-Ready AI Agents: My Practical Guide to Deployment - Amit Kumar | Amit Kumar"
+          },
+          "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.meta_desc.long",
+          "severity": "P3",
+          "title": "Meta description long (417 chars) on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Trim to \u2264160 chars to avoid SERP truncation.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.title.long",
+          "severity": "P2",
+          "title": "Title truncated risk (83 chars) on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "snippet": null,
+            "value": "How to Build Enterprise-Grade, Production-Ready AI Agents - Amit Kumar | Amit Kumar"
+          },
+          "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.title.long",
+          "severity": "P2",
+          "title": "Title truncated risk (87 chars) on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "snippet": null,
+            "value": "How to Set Up OpenClaw: A Builder's Honest Setup Guide (2026) - Amit Kumar | Amit Kumar"
+          },
+          "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.title.long",
+          "severity": "P2",
+          "title": "Title truncated risk (98 chars) on https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "snippet": null,
+            "value": "What's Actually Inside Claude Code (It's More Impressive Than You Think) - Amit Kumar | Amit Kumar"
+          },
+          "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.meta_desc.long",
+          "severity": "P3",
+          "title": "Meta description long (303 chars) on https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Trim to \u2264160 chars to avoid SERP truncation.",
+          "effort": "S",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.thin",
+          "severity": "P1",
+          "title": "Thin content (155 words) on https://iamamitkumar.dev/inspiration",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/inspiration",
+            "snippet": null,
+            "value": 155
+          },
+          "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+          "effort": "L",
+          "google_algo_ref": "Helpful Content"
+        },
+        {
+          "id": "content.thin",
+          "severity": "P1",
+          "title": "Thin content (178 words) on https://iamamitkumar.dev/sponsor",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/sponsor",
+            "snippet": null,
+            "value": 178
+          },
+          "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+          "effort": "L",
+          "google_algo_ref": "Helpful Content"
+        },
+        {
+          "id": "content.borderline",
+          "severity": "P3",
+          "title": "Borderline content length (533 words) on https://iamamitkumar.dev/tweets",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/tweets",
+            "snippet": null,
+            "value": 533
+          },
+          "recommendation": "Consider expanding for topical depth. Not every page needs 600+ words, but content hubs do.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.thin",
+          "severity": "P1",
+          "title": "Thin content (265 words) on https://iamamitkumar.dev/workflow",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/workflow",
+            "snippet": null,
+            "value": 265
+          },
+          "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+          "effort": "L",
+          "google_algo_ref": "Helpful Content"
+        },
+        {
+          "id": "content.readability.hard",
+          "severity": "P3",
+          "title": "Very hard to read (Flesch -12.7) on https://iamamitkumar.dev/workflow",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/workflow",
+            "snippet": null,
+            "value": -12.7
+          },
+          "recommendation": "Shorten sentences and use simpler words. Flesch 60\u201370 is the target for web content.",
+          "effort": "M",
+          "google_algo_ref": null
+        },
+        {
+          "id": "content.thin",
+          "severity": "P1",
+          "title": "Thin content (82 words) on https://iamamitkumar.dev/newsletter",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/newsletter",
+            "snippet": null,
+            "value": 82
+          },
+          "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+          "effort": "L",
+          "google_algo_ref": "Helpful Content"
+        },
+        {
+          "id": "content.title.duplicate",
+          "severity": "P1",
+          "title": "Duplicate title on https://iamamitkumar.dev/",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/",
+            "snippet": null,
+            "value": "Amit Kumar | Agentic Architect & Full-Stack Engineer"
+          },
+          "recommendation": "Title 'Amit Kumar | Agentic Architect & Full-Stack Engineer' is used on 2 pages. Make each unique.",
+          "effort": "S",
+          "google_algo_ref": "Duplicate content"
+        },
+        {
+          "id": "content.title.duplicate",
+          "severity": "P1",
+          "title": "Duplicate title on https://iamamitkumar.dev/newsletter",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/newsletter",
+            "snippet": null,
+            "value": "Amit Kumar | Agentic Architect & Full-Stack Engineer"
+          },
+          "recommendation": "Title 'Amit Kumar | Agentic Architect & Full-Stack Engineer' is used on 2 pages. Make each unique.",
+          "effort": "S",
+          "google_algo_ref": "Duplicate content"
+        }
+      ],
+      "data": {
+        "per_page": [
+          {
+            "url": "https://iamamitkumar.dev/",
+            "title": "Amit Kumar | Agentic Architect & Full-Stack Engineer",
+            "title_len": 52,
+            "meta_desc": "Indie hacker building AI products in public \u2014 from LaunchSuite.tech to multi-agent systems, growth experiments, and fast MVP launches.",
+            "meta_desc_len": 134,
+            "word_count": 463,
+            "flesch": 54.9
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog",
+            "title": "Blog \u2014 Founder Notes & Build Logs | Amit Kumar",
+            "title_len": 46,
+            "meta_desc": "Founder notes, build logs, and technical writing on shipping products, AI systems, and growth experiments.",
+            "meta_desc_len": 106,
+            "word_count": 108,
+            "flesch": 51.7
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+            "title": "Why Your AI Agent Pilot Never Makes It to Production (And How to Fix It) - Amit Kumar | Amit Kumar",
+            "title_len": 98,
+            "meta_desc": "Only 11% of organizations have AI agents in production despite 38% running pilots. Here's the exact framework I use to close that gap \u2014 and ship agents that actually last.",
+            "meta_desc_len": 171,
+            "word_count": 1283,
+            "flesch": 53.9
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "title": "Building Enterprise-Grade Production-Ready AI Agents: My Practical Guide to Deployment - Amit Kumar | Amit Kumar",
+            "title_len": 112,
+            "meta_desc": "I've spent the past few years helping several Fortune 500 companies move from prototype AI agents to full production systems. It's not just about slapping together some LangChain code and calling it a day. Enterprise-grade means the agent can run 24/7, handle thousands of requests, stay secure, and not bankrupt the company with API bills.\nHere's what I've learned the hard way\u2014the steps that actually get you there.",
+            "meta_desc_len": 417,
+            "word_count": 603,
+            "flesch": 50.8
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "title": "How to Build Enterprise-Grade, Production-Ready AI Agents - Amit Kumar | Amit Kumar",
+            "title_len": 83,
+            "meta_desc": "Blog post by Amit Kumar \u2014 How to Build Enterprise-Grade, Production-Ready AI Agents",
+            "meta_desc_len": 83,
+            "word_count": 1081,
+            "flesch": 58.8
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "title": "How to Set Up OpenClaw: A Builder's Honest Setup Guide (2026) - Amit Kumar | Amit Kumar",
+            "title_len": 87,
+            "meta_desc": "I've been building AI agents for two years. CrewAI, LangGraph, AutoGen \u2014 I've shipped production systems on all of them.",
+            "meta_desc_len": 120,
+            "word_count": 1867,
+            "flesch": 52.0
+          },
+          {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "title": "What's Actually Inside Claude Code (It's More Impressive Than You Think) - Amit Kumar | Amit Kumar",
+            "title_len": 98,
+            "meta_desc": "I've been using Claude Code for a while and treating it as a black box. Someone recently reverse-engineered the source \u2014 and it turns out there's a custom React reconciler, a Yoga flexbox layout engine, and a double-buffered renderer all living inside your terminal. Here's what I found most surprising.",
+            "meta_desc_len": 303,
+            "word_count": 1815,
+            "flesch": 52.6
+          },
+          {
+            "url": "https://iamamitkumar.dev/inspiration",
+            "title": "Inspiration \u2014 People & Products That Shape My Work | Amit Kumar",
+            "title_len": 63,
+            "meta_desc": "People, products, and systems that shape how I ship MVPs fast, validate demand, and build distribution.",
+            "meta_desc_len": 103,
+            "word_count": 155,
+            "flesch": 41.7
+          },
+          {
+            "url": "https://iamamitkumar.dev/sponsor",
+            "title": "Sponsor \u2014 Partner With Me for Founder-Focused Collabs | Amit Kumar",
+            "title_len": 66,
+            "meta_desc": "Partner with me on founder-focused collaborations, product launches, and distribution experiments.",
+            "meta_desc_len": 98,
+            "word_count": 178,
+            "flesch": 52.7
+          },
+          {
+            "url": "https://iamamitkumar.dev/tweets",
+            "title": "Tweets \u2014 Build-in-Public Posts & Updates | Amit Kumar",
+            "title_len": 53,
+            "meta_desc": "A curated timeline of my build-in-public posts on products, launches, growth, and indie hacker execution.",
+            "meta_desc_len": 105,
+            "word_count": 533,
+            "flesch": 61.9
+          },
+          {
+            "url": "https://iamamitkumar.dev/workflow",
+            "title": "Workflow \u2014 My AI-First Dev Stack & Tools | Amit Kumar",
+            "title_len": 53,
+            "meta_desc": "My AI-first dev workflow \u2014 the tools, languages, editors, and systems powering my projects.",
+            "meta_desc_len": 91,
+            "word_count": 265,
+            "flesch": -12.7
+          },
+          {
+            "url": "https://iamamitkumar.dev/newsletter",
+            "title": "Amit Kumar | Agentic Architect & Full-Stack Engineer",
+            "title_len": 52,
+            "meta_desc": "Mission Control for AI Agents. Engineering production-grade agentic architectures, trading platforms, and enterprise SaaS.",
+            "meta_desc_len": 122,
+            "word_count": 82,
+            "flesch": 62.9
+          }
+        ]
+      }
+    },
+    {
+      "name": "linkgraph",
+      "score": 100,
+      "findings": [],
+      "data": {
+        "nodes": 12,
+        "edges": 112,
+        "orphans_count": 0,
+        "orphans_sample": [],
+        "max_depth": 2,
+        "deep_pages_count": 0,
+        "generic_anchor_pct": 0.0,
+        "top_anchors": [
+          [
+            "home",
+            12
+          ],
+          [
+            "tweets",
+            12
+          ],
+          [
+            "inspiration",
+            12
+          ],
+          [
+            "workflow",
+            12
+          ],
+          [
+            "blog",
+            12
+          ],
+          [
+            "newsletter",
+            12
+          ],
+          [
+            "sponsor",
+            12
+          ],
+          [
+            "\u2190 back to blog",
+            5
+          ],
+          [
+            "how to set up openclaw: a builder's honest setup guide (2026)",
+            4
+          ],
+          [
+            "what's actually inside claude code (it's more impressive than you think)",
+            4
+          ]
+        ]
+      }
+    },
+    {
+      "name": "aio",
+      "score": 86,
+      "findings": [
+        {
+          "id": "aio.faq.missing",
+          "severity": "P3",
+          "title": "No FAQPage schema found anywhere on the site",
+          "evidence": {
+            "url": "https://iamamitkumar.dev",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add an FAQ section with FAQPage schema to pages answering common questions. High AI-Overview pull rate.",
+          "effort": "M",
+          "google_algo_ref": "AI Overviews / Rich Results: FAQ"
+        },
+        {
+          "id": "aio.questions.missing",
+          "severity": "P3",
+          "title": "No question-style H2/H3 on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add H2s phrased as questions (e.g., 'What is X?') \u2014 AI Overviews prefer extractive Q/A.",
+          "effort": "M",
+          "google_algo_ref": "AI Overviews / passage ranking"
+        },
+        {
+          "id": "aio.questions.missing",
+          "severity": "P3",
+          "title": "No question-style H2/H3 on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add H2s phrased as questions (e.g., 'What is X?') \u2014 AI Overviews prefer extractive Q/A.",
+          "effort": "M",
+          "google_algo_ref": "AI Overviews / passage ranking"
+        },
+        {
+          "id": "aio.howto.missing",
+          "severity": "P2",
+          "title": "How-to style page missing HowTo schema: https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add HowTo JSON-LD with name + step array. Rich Results + AI Overviews eligible.",
+          "effort": "M",
+          "google_algo_ref": "Rich Results: HowTo"
+        },
+        {
+          "id": "aio.questions.missing",
+          "severity": "P3",
+          "title": "No question-style H2/H3 on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add H2s phrased as questions (e.g., 'What is X?') \u2014 AI Overviews prefer extractive Q/A.",
+          "effort": "M",
+          "google_algo_ref": "AI Overviews / passage ranking"
+        },
+        {
+          "id": "aio.howto.missing",
+          "severity": "P2",
+          "title": "How-to style page missing HowTo schema: https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add HowTo JSON-LD with name + step array. Rich Results + AI Overviews eligible.",
+          "effort": "M",
+          "google_algo_ref": "Rich Results: HowTo"
+        },
+        {
+          "id": "aio.questions.missing",
+          "severity": "P3",
+          "title": "No question-style H2/H3 on https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "evidence": {
+            "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add H2s phrased as questions (e.g., 'What is X?') \u2014 AI Overviews prefer extractive Q/A.",
+          "effort": "M",
+          "google_algo_ref": "AI Overviews / passage ranking"
+        },
+        {
+          "id": "aio.tldr.missing",
+          "severity": "P3",
+          "title": "No article has a TL;DR / summary block",
+          "evidence": {
+            "url": "https://iamamitkumar.dev",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add a 2\u20133 sentence TL;DR at the top of articles; AI Overviews and readers both scan for it.",
+          "effort": "S",
+          "google_algo_ref": null
+        }
+      ],
+      "data": {
+        "has_faq_schema": false,
+        "has_howto_schema": false,
+        "article_count": 5,
+        "articles_with_question_headings": 1,
+        "articles_with_tldr": 0
+      }
+    }
+  ],
+  "top_findings_by_priority": {
+    "P0": [
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/blog",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/inspiration",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/inspiration",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/sponsor",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/sponsor",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/tweets",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/tweets",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      },
+      {
+        "id": "headings.h1.missing",
+        "severity": "P0",
+        "title": "No H1 on https://iamamitkumar.dev/workflow",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/workflow",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add exactly one H1 that describes the page topic using the primary keyword.",
+        "effort": "S",
+        "google_algo_ref": "On-page signals / Helpful Content",
+        "signal": "headings"
+      }
+    ],
+    "P1": [
+      {
+        "id": "technical.canonical.missing",
+        "severity": "P1",
+        "title": "Missing canonical tag on https://iamamitkumar.dev/newsletter",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/newsletter",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add <link rel=\"canonical\" href=\"<absolute-url>\"> to the <head>.",
+        "effort": "S",
+        "google_algo_ref": "Duplicate content handling",
+        "signal": "technical"
+      },
+      {
+        "id": "headings.h1.multiple",
+        "severity": "P1",
+        "title": "7 H1s on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "snippet": null,
+          "value": [
+            "Expected: openclaw/2026.x.x node/v22.x.x",
+            "Paste your bot token when prompted",
+            "telegram  \u2713 connected  last_msg: never"
+          ]
+        },
+        "recommendation": "Keep exactly one H1 per page. Demote the rest to H2.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "schema.homepage.no_organization",
+        "severity": "P1",
+        "title": "Homepage missing Organization (or LocalBusiness) schema",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add Organization JSON-LD with name, url, logo, sameAs (social profiles).",
+        "effort": "S",
+        "google_algo_ref": "Entity / Knowledge Graph",
+        "signal": "schema"
+      },
+      {
+        "id": "eeat.org.missing",
+        "severity": "P1",
+        "title": "No Organization schema on homepage",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add Organization JSON-LD with name, url, logo, sameAs.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Authoritativeness",
+        "signal": "eeat"
+      },
+      {
+        "id": "content.thin",
+        "severity": "P1",
+        "title": "Thin content (108 words) on https://iamamitkumar.dev/blog",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog",
+          "snippet": null,
+          "value": 108
+        },
+        "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+        "effort": "L",
+        "google_algo_ref": "Helpful Content",
+        "signal": "content"
+      },
+      {
+        "id": "content.thin",
+        "severity": "P1",
+        "title": "Thin content (155 words) on https://iamamitkumar.dev/inspiration",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/inspiration",
+          "snippet": null,
+          "value": 155
+        },
+        "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+        "effort": "L",
+        "google_algo_ref": "Helpful Content",
+        "signal": "content"
+      },
+      {
+        "id": "content.thin",
+        "severity": "P1",
+        "title": "Thin content (178 words) on https://iamamitkumar.dev/sponsor",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/sponsor",
+          "snippet": null,
+          "value": 178
+        },
+        "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+        "effort": "L",
+        "google_algo_ref": "Helpful Content",
+        "signal": "content"
+      },
+      {
+        "id": "content.thin",
+        "severity": "P1",
+        "title": "Thin content (265 words) on https://iamamitkumar.dev/workflow",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/workflow",
+          "snippet": null,
+          "value": 265
+        },
+        "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+        "effort": "L",
+        "google_algo_ref": "Helpful Content",
+        "signal": "content"
+      },
+      {
+        "id": "content.thin",
+        "severity": "P1",
+        "title": "Thin content (82 words) on https://iamamitkumar.dev/newsletter",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/newsletter",
+          "snippet": null,
+          "value": 82
+        },
+        "recommendation": "Expand to 600+ words with unique value; Helpful Content system penalizes thin pages.",
+        "effort": "L",
+        "google_algo_ref": "Helpful Content",
+        "signal": "content"
+      },
+      {
+        "id": "content.title.duplicate",
+        "severity": "P1",
+        "title": "Duplicate title on https://iamamitkumar.dev/",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/",
+          "snippet": null,
+          "value": "Amit Kumar | Agentic Architect & Full-Stack Engineer"
+        },
+        "recommendation": "Title 'Amit Kumar | Agentic Architect & Full-Stack Engineer' is used on 2 pages. Make each unique.",
+        "effort": "S",
+        "google_algo_ref": "Duplicate content",
+        "signal": "content"
+      },
+      {
+        "id": "content.title.duplicate",
+        "severity": "P1",
+        "title": "Duplicate title on https://iamamitkumar.dev/newsletter",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/newsletter",
+          "snippet": null,
+          "value": "Amit Kumar | Agentic Architect & Full-Stack Engineer"
+        },
+        "recommendation": "Title 'Amit Kumar | Agentic Architect & Full-Stack Engineer' is used on 2 pages. Make each unique.",
+        "effort": "S",
+        "google_algo_ref": "Duplicate content",
+        "signal": "content"
+      }
+    ],
+    "P2": [
+      {
+        "id": "headings.skipped_level",
+        "severity": "P2",
+        "title": "1 skipped heading level(s) on https://iamamitkumar.dev/newsletter",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/newsletter",
+          "snippet": null,
+          "value": [
+            2,
+            1,
+            3,
+            3
+          ]
+        },
+        "recommendation": "Don't skip levels (e.g., H2 \u2192 H4). Go in order: H1 \u2192 H2 \u2192 H3 \u2026",
+        "effort": "S",
+        "google_algo_ref": "Accessibility (WCAG 1.3.1) + content parsing",
+        "signal": "headings"
+      },
+      {
+        "id": "eeat.contact.missing",
+        "severity": "P2",
+        "title": "No Contact page or mailto: link found",
+        "evidence": {
+          "url": "https://iamamitkumar.dev",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add a /contact page with business email + physical address. Basic trust signal.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Trustworthiness",
+        "signal": "eeat"
+      },
+      {
+        "id": "eeat.about.missing",
+        "severity": "P2",
+        "title": "No About page found",
+        "evidence": {
+          "url": "https://iamamitkumar.dev",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add an /about page covering team, history, credentials. Expertise signal.",
+        "effort": "M",
+        "google_algo_ref": "E-E-A-T / Expertise",
+        "signal": "eeat"
+      },
+      {
+        "id": "eeat.author.missing_sameAs",
+        "severity": "P2",
+        "title": "Author on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production has no sameAs link",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+          "snippet": null,
+          "value": "Amit Kumar"
+        },
+        "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Author entity",
+        "signal": "eeat"
+      },
+      {
+        "id": "eeat.author.missing_sameAs",
+        "severity": "P2",
+        "title": "Author on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment has no sameAs link",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "snippet": null,
+          "value": "Amit Kumar"
+        },
+        "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Author entity",
+        "signal": "eeat"
+      },
+      {
+        "id": "eeat.author.missing_sameAs",
+        "severity": "P2",
+        "title": "Author on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents has no sameAs link",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "snippet": null,
+          "value": "Amit Kumar"
+        },
+        "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Author entity",
+        "signal": "eeat"
+      },
+      {
+        "id": "eeat.author.missing_sameAs",
+        "severity": "P2",
+        "title": "Author on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026 has no sameAs link",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "snippet": null,
+          "value": "Amit Kumar"
+        },
+        "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Author entity",
+        "signal": "eeat"
+      },
+      {
+        "id": "eeat.author.missing_sameAs",
+        "severity": "P2",
+        "title": "Author on https://iamamitkumar.dev/blog/what-is-inside-claude-code has no sameAs link",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "snippet": null,
+          "value": "Amit Kumar"
+        },
+        "recommendation": "Add author.sameAs linking to the author's LinkedIn / X / personal site. Entity verification.",
+        "effort": "S",
+        "google_algo_ref": "E-E-A-T / Author entity",
+        "signal": "eeat"
+      },
+      {
+        "id": "content.title.long",
+        "severity": "P2",
+        "title": "Title truncated risk (98 chars) on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+          "snippet": null,
+          "value": "Why Your AI Agent Pilot Never Makes It to Production (And How to Fix It) - Amit Kumar | Amit Kumar"
+        },
+        "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.title.long",
+        "severity": "P2",
+        "title": "Title truncated risk (112 chars) on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "snippet": null,
+          "value": "Building Enterprise-Grade Production-Ready AI Agents: My Practical Guide to Deployment - Amit Kumar | Amit Kumar"
+        },
+        "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.title.long",
+        "severity": "P2",
+        "title": "Title truncated risk (83 chars) on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "snippet": null,
+          "value": "How to Build Enterprise-Grade, Production-Ready AI Agents - Amit Kumar | Amit Kumar"
+        },
+        "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.title.long",
+        "severity": "P2",
+        "title": "Title truncated risk (87 chars) on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "snippet": null,
+          "value": "How to Set Up OpenClaw: A Builder's Honest Setup Guide (2026) - Amit Kumar | Amit Kumar"
+        },
+        "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.title.long",
+        "severity": "P2",
+        "title": "Title truncated risk (98 chars) on https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "snippet": null,
+          "value": "What's Actually Inside Claude Code (It's More Impressive Than You Think) - Amit Kumar | Amit Kumar"
+        },
+        "recommendation": "Trim title to \u226460 chars so it isn't truncated in SERPs.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "aio.howto.missing",
+        "severity": "P2",
+        "title": "How-to style page missing HowTo schema: https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add HowTo JSON-LD with name + step array. Rich Results + AI Overviews eligible.",
+        "effort": "M",
+        "google_algo_ref": "Rich Results: HowTo",
+        "signal": "aio"
+      },
+      {
+        "id": "aio.howto.missing",
+        "severity": "P2",
+        "title": "How-to style page missing HowTo schema: https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add HowTo JSON-LD with name + step array. Rich Results + AI Overviews eligible.",
+        "effort": "M",
+        "google_algo_ref": "Rich Results: HowTo",
+        "signal": "aio"
+      }
+    ],
+    "P3": [
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/blog: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/blog/what-is-inside-claude-code: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/inspiration: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/inspiration",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/sponsor: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/sponsor",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/tweets: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/tweets",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/workflow: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/workflow",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "headings.semantic.missing",
+        "severity": "P3",
+        "title": "Missing semantic tags on https://iamamitkumar.dev/newsletter: header",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/newsletter",
+          "snippet": null,
+          "value": [
+            "header"
+          ]
+        },
+        "recommendation": "Wrap content in <header> tags. Helps Google's content extraction.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "headings"
+      },
+      {
+        "id": "schema.homepage.no_website",
+        "severity": "P3",
+        "title": "Homepage missing WebSite schema",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add WebSite JSON-LD with SearchAction to enable sitelinks searchbox.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "schema"
+      },
+      {
+        "id": "schema.blogposting.missing_recommended.image",
+        "severity": "P3",
+        "title": "BlogPosting schema missing recommended property: image",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add `image` to the BlogPosting JSON-LD block for stronger rich-result eligibility.",
+        "effort": "S",
+        "google_algo_ref": "Rich Results: BlogPosting",
+        "signal": "schema"
+      },
+      {
+        "id": "schema.blogposting.missing_recommended.image",
+        "severity": "P3",
+        "title": "BlogPosting schema missing recommended property: image",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add `image` to the BlogPosting JSON-LD block for stronger rich-result eligibility.",
+        "effort": "S",
+        "google_algo_ref": "Rich Results: BlogPosting",
+        "signal": "schema"
+      },
+      {
+        "id": "cwv.psi.disabled",
+        "severity": "P3",
+        "title": "Core Web Vitals check skipped (PSI disabled)",
+        "evidence": {
+          "url": "https://iamamitkumar.dev",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Re-run without --no-psi and with a PAGESPEED_API_KEY for CWV data.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "cwv"
+      },
+      {
+        "id": "content.meta_desc.long",
+        "severity": "P3",
+        "title": "Meta description long (171 chars) on https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/ai-agent-pilot-to-production",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Trim to \u2264160 chars to avoid SERP truncation.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.meta_desc.long",
+        "severity": "P3",
+        "title": "Meta description long (417 chars) on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Trim to \u2264160 chars to avoid SERP truncation.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.meta_desc.long",
+        "severity": "P3",
+        "title": "Meta description long (303 chars) on https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Trim to \u2264160 chars to avoid SERP truncation.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.borderline",
+        "severity": "P3",
+        "title": "Borderline content length (533 words) on https://iamamitkumar.dev/tweets",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/tweets",
+          "snippet": null,
+          "value": 533
+        },
+        "recommendation": "Consider expanding for topical depth. Not every page needs 600+ words, but content hubs do.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "content.readability.hard",
+        "severity": "P3",
+        "title": "Very hard to read (Flesch -12.7) on https://iamamitkumar.dev/workflow",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/workflow",
+          "snippet": null,
+          "value": -12.7
+        },
+        "recommendation": "Shorten sentences and use simpler words. Flesch 60\u201370 is the target for web content.",
+        "effort": "M",
+        "google_algo_ref": null,
+        "signal": "content"
+      },
+      {
+        "id": "aio.faq.missing",
+        "severity": "P3",
+        "title": "No FAQPage schema found anywhere on the site",
+        "evidence": {
+          "url": "https://iamamitkumar.dev",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add an FAQ section with FAQPage schema to pages answering common questions. High AI-Overview pull rate.",
+        "effort": "M",
+        "google_algo_ref": "AI Overviews / Rich Results: FAQ",
+        "signal": "aio"
+      },
+      {
+        "id": "aio.questions.missing",
+        "severity": "P3",
+        "title": "No question-style H2/H3 on https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/building-enterprise-grade-production-ready-ai-agents-my-practical-guide-to-deployment",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add H2s phrased as questions (e.g., 'What is X?') \u2014 AI Overviews prefer extractive Q/A.",
+        "effort": "M",
+        "google_algo_ref": "AI Overviews / passage ranking",
+        "signal": "aio"
+      },
+      {
+        "id": "aio.questions.missing",
+        "severity": "P3",
+        "title": "No question-style H2/H3 on https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-build-enterprise-grade-production-ready-ai-agents",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add H2s phrased as questions (e.g., 'What is X?') \u2014 AI Overviews prefer extractive Q/A.",
+        "effort": "M",
+        "google_algo_ref": "AI Overviews / passage ranking",
+        "signal": "aio"
+      },
+      {
+        "id": "aio.questions.missing",
+        "severity": "P3",
+        "title": "No question-style H2/H3 on https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/how-to-set-up-openclaw-a-builder-s-honest-setup-guide-2026",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add H2s phrased as questions (e.g., 'What is X?') \u2014 AI Overviews prefer extractive Q/A.",
+        "effort": "M",
+        "google_algo_ref": "AI Overviews / passage ranking",
+        "signal": "aio"
+      },
+      {
+        "id": "aio.questions.missing",
+        "severity": "P3",
+        "title": "No question-style H2/H3 on https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+        "evidence": {
+          "url": "https://iamamitkumar.dev/blog/what-is-inside-claude-code",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add H2s phrased as questions (e.g., 'What is X?') \u2014 AI Overviews prefer extractive Q/A.",
+        "effort": "M",
+        "google_algo_ref": "AI Overviews / passage ranking",
+        "signal": "aio"
+      },
+      {
+        "id": "aio.tldr.missing",
+        "severity": "P3",
+        "title": "No article has a TL;DR / summary block",
+        "evidence": {
+          "url": "https://iamamitkumar.dev",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add a 2\u20133 sentence TL;DR at the top of articles; AI Overviews and readers both scan for it.",
+        "effort": "S",
+        "google_algo_ref": null,
+        "signal": "aio"
+      }
+    ]
+  }
+}

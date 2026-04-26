@@ -1,0 +1,37 @@
+Directory,DR,Tier,Status,Method,URL,Notes,Category
+Chrome Web Store,99,1,pending,Publish extension,chromewebstore.google.com,Chrome extensions only,developer
+Crunchbase,99,1,pending,Claim/edit profile,crunchbase.com,"Complete profile with funding, founders, products",startup
+GitHub,97,1,pending,Create repo,github.com,Open source projects,developer
+Wikipedia,97,1,pending,Edit page,wikipedia.org,Notability threshold required,knowledge
+Reddit,95,2,pending,Post,reddit.com,Relevant subreddits only,community
+Forbes,94,1,pending,PR/Pitch,forbes.com,Requires relationships,press
+Medium,94,2,pending,Publication,medium.com,Cross-post with canonical,content
+Yelp,94,3,pending,Claim listing,yelp.com,Local businesses only,local
+Product Hunt,93,1,pending,Account + post,producthunt.com,Launch strategy critical,software
+Trustpilot,93,3,pending,Claim profile,trustpilot.com,Generate reviews,review
+Quora,92,3,pending,Answer questions,quora.com,Helpful answers with links,community
+SourceForge,92,1,pending,Account + submit,sourceforge.net,For open source,developer
+G2,91,1,pending,Vendor account,g2.com,Review-driven; takes time,software
+Hacker News,91,2,pending,Submit,news.ycombinator.com,Show HN for products,community
+WikiHow,91,3,pending,Submit article,wikihow.com,How-to content,content
+Dev.to,90,2,pending,API/Post,dev.to,Developer content,content
+Capterra,88,1,pending,Vendor account,capterra.com,Review-driven; takes time,software
+AngelList / Wellfound,87,2,pending,Company profile,wellfound.com,,startup
+Starter Story,85,2,pending,Interview,starterstory.com,Founder story required,startup
+TrustRadius,84,1,pending,Vendor account,trustradius.com,Enterprise focus,software
+Clutch,83,3,pending,Agency profile,clutch.co,Agency/service reviews,review
+Hashnode,83,2,pending,API/Post,hashnode.com,Developer content,content
+Indie Hackers,80,2,pending,Post product,indiehackers.com,Community-driven,startup
+AlternativeTo,79,1,pending,Account + add,alternativeto.net,Suggest alternatives to competitors,software
+Stack Share,79,1,pending,Account + add,stackshare.io,Developer tools,developer
+GoodFirms,78,3,pending,Software profile,goodfirms.co,Software/service reviews,review
+SaaSHub,78,1,pending,Account + submit,saashub.com,Good for discovery,software
+GetApp,76,2,pending,Vendor account,getapp.com,SMB focus,software
+Software Advice,75,2,pending,Vendor account,softwareadvice.com,Lead gen focused,software
+Failory,74,2,pending,Interview,failory.com,Failure/success story,startup
+Crozdesk,72,2,pending,Vendor account,crozdesk.com,,software
+F6S,72,2,pending,Startup profile,f6s.com,,startup
+Gust,68,3,pending,Investor platform,gust.com,,startup
+BetaList,65,2,pending,Submit startup,betalist.com,Pre-launch or early,startup
+Launching Next,60,2,pending,Submit,launchingnext.com,Startup directory,startup
+StartupBase,55,2,pending,Account + add,startupbase.io,,startup

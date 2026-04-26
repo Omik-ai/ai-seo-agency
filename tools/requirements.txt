@@ -1,0 +1,19 @@
+# AI SEO Agency — Tools Dependencies
+# Install: pip install -r tools/requirements.txt
+
+# Core audit engine
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+requests>=2.31.0
+
+# Optional: NLP entity extraction (falls back to regex if missing)
+# spacy>=3.7.0
+# en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+
+# Google APIs (Indexing API, GSC, etc.)
+# google-auth>=2.23.0
+# google-auth-oauthlib>=1.0.0
+# google-api-python-client>=2.100.0
+
+# Publishing integrations (optional)
+# notion-client>=2.2.0

@@ -9,6 +9,10 @@ from ..report import Effort, Evidence, Finding, Severity, SignalResult
 from ..scoring import score_from_findings
 
 
+def _norm(url: str) -> str:
+    return url.split("#", 1)[0].rstrip("/").lower()
+
+
 def check(ctx) -> SignalResult:
     findings: list[Finding] = []
     data: dict = {}
@@ -188,6 +192,174 @@ def check(ctx) -> SignalResult:
             evidence=Evidence(url=ctx.base_url, value=f"{missing_hsts}/{pages_checked}"),
             recommendation="Add `Strict-Transport-Security: max-age=31536000; includeSubDomains` response header.",
             effort=Effort.S,
+        ))
+
+    # ── hreflang audit ────────────────────────────────────────────
+    hreflang_pages = 0
+    hreflang_missing_self = 0
+    hreflang_missing_xdefault = 0
+    hreflang_broken = 0
+
+    for p in ctx.pages:
+        if p.status != 200 or not p.html:
+            continue
+        soup = BeautifulSoup(p.html, "lxml")
+        alts = soup.find_all("link", rel=lambda v: v and "alternate" in v, hreflang=True)
+        if not alts:
+            # Also check HTTP header
+            hl_hdr = p.headers.get("Link", "") or p.headers.get("link", "")
+            if "hreflang" in hl_hdr:
+                alts = [True]  # placeholder, header present
+        if alts:
+            hreflang_pages += 1
+            langs = set()
+            has_self = False
+            has_xdefault = False
+            for tag in soup.find_all("link", rel=lambda v: v and "alternate" in v, hreflang=True):
+                lang = tag.get("hreflang", "")
+                href = tag.get("href", "")
+                langs.add(lang)
+                if lang == "x-default":
+                    has_xdefault = True
+                if _norm(href) == _norm(p.final_url):
+                    has_self = True
+                # Basic broken check: href must be absolute or resolvable
+                if href and not href.startswith(("http", "/")):
+                    hreflang_broken += 1
+            if not has_self:
+                hreflang_missing_self += 1
+            if not has_xdefault:
+                hreflang_missing_xdefault += 1
+
+    data.update({
+        "hreflang_pages": hreflang_pages,
+        "hreflang_missing_self": hreflang_missing_self,
+        "hreflang_missing_xdefault": hreflang_missing_xdefault,
+        "hreflang_broken_links": hreflang_broken,
+    })
+
+    if hreflang_pages > 0:
+        if hreflang_missing_self > 0:
+            findings.append(Finding(
+                id="technical.hreflang.missing_self",
+                severity=Severity.P1,
+                title=f"{hreflang_missing_self} page(s) missing self-referencing hreflang",
+                evidence=Evidence(url=ctx.base_url, value=hreflang_missing_self),
+                recommendation="Every page with hreflang must include a self-referencing alternate. Add <link rel='alternate' hreflang='xx' href='self-url' />.",
+                effort=Effort.S,
+                google_algo_ref="International SEO / hreflang",
+            ))
+        if hreflang_missing_xdefault > 0:
+            findings.append(Finding(
+                id="technical.hreflang.missing_xdefault",
+                severity=Severity.P2,
+                title=f"{hreflang_missing_xdefault} page(s) missing x-default hreflang",
+                evidence=Evidence(url=ctx.base_url, value=hreflang_missing_xdefault),
+                recommendation="Add hreflang='x-default' pointing to the global fallback page. Required for proper international targeting.",
+                effort=Effort.S,
+                google_algo_ref="International SEO / hreflang",
+            ))
+        if hreflang_broken > 0:
+            findings.append(Finding(
+                id="technical.hreflang.broken",
+                severity=Severity.P1,
+                title=f"{hreflang_broken} hreflang link(s) with malformed URLs",
+                evidence=Evidence(url=ctx.base_url, value=hreflang_broken),
+                recommendation="Fix hreflang URLs to be absolute or root-relative. Malformed hreflang confuses crawlers.",
+                effort=Effort.S,
+                google_algo_ref="International SEO / hreflang",
+            ))
+
+    # ── mobile-usability audit ───────────────────────────────────
+    missing_viewport = 0
+    small_font_pages = 0
+    narrow_touch_targets = 0
+
+    for p in ctx.pages:
+        if p.status != 200 or not p.html:
+            continue
+        soup = BeautifulSoup(p.html, "lxml")
+        viewport = soup.find("meta", attrs={"name": "viewport"})
+        if not viewport:
+            missing_viewport += 1
+        else:
+            content = viewport.get("content", "")
+            # Check for width=device-width
+            if "width=device-width" not in content:
+                findings.append(Finding(
+                    id="technical.mobile.viewport_bad",
+                    severity=Severity.P1,
+                    title=f"Viewport meta missing width=device-width on {p.final_url}",
+                    evidence=Evidence(url=p.final_url, value=content),
+                    recommendation="Set viewport to 'width=device-width, initial-scale=1' for mobile-first indexing.",
+                    effort=Effort.S,
+                    google_algo_ref="Mobile-first indexing",
+                ))
+
+        # Heuristic: look for very small inline font sizes
+        small_fonts = soup.find_all(style=lambda s: s and "font-size" in s.lower())
+        tiny_found = False
+        for el in small_fonts:
+            style = el.get("style", "").lower()
+            for part in style.split(";"):
+                if "font-size" in part:
+                    val = part.split(":")[-1].strip()
+                    try:
+                        num = float(val.replace("px", "").replace("pt", "").replace("em", "").replace("rem", ""))
+                        unit = "px" if "px" in val else "pt" if "pt" in val else "em" if "em" in val else "rem"
+                        # rough thresholds: <12px, <9pt, <0.75em/rem
+                        if (unit == "px" and num < 12) or (unit == "pt" and num < 9) or ((unit in ("em", "rem")) and num < 0.75):
+                            tiny_found = True
+                            break
+                    except ValueError:
+                        continue
+            if tiny_found:
+                break
+        if tiny_found:
+            small_font_pages += 1
+
+        # Heuristic: links with very short text = potentially small touch targets
+        for a in soup.find_all("a"):
+            txt = a.get_text(strip=True)
+            if len(txt) < 3 and not a.find("img"):
+                narrow_touch_targets += 1
+                if narrow_touch_targets <= 3:
+                    findings.append(Finding(
+                        id="technical.mobile.small_touch_target",
+                        severity=Severity.P2,
+                        title=f"Potential small touch target on {p.final_url}",
+                        evidence=Evidence(url=p.final_url, value=txt or "[empty]"),
+                        recommendation="Ensure interactive elements are at least 48x48 CSS pixels for mobile usability.",
+                        effort=Effort.S,
+                        google_algo_ref="Mobile usability / Page Experience",
+                    ))
+
+    data.update({
+        "missing_viewport_count": missing_viewport,
+        "small_font_pages": small_font_pages,
+        "narrow_touch_target_count": narrow_touch_targets,
+    })
+
+    if missing_viewport > 0:
+        findings.append(Finding(
+            id="technical.mobile.viewport_missing",
+            severity=Severity.P0,
+            title=f"{missing_viewport} page(s) missing viewport meta tag",
+            evidence=Evidence(url=ctx.base_url, value=missing_viewport),
+            recommendation="Add <meta name='viewport' content='width=device-width, initial-scale=1'> to every page. Critical for mobile-first indexing.",
+            effort=Effort.S,
+            google_algo_ref="Mobile-first indexing",
+        ))
+
+    if small_font_pages > 0:
+        findings.append(Finding(
+            id="technical.mobile.small_font",
+            severity=Severity.P2,
+            title=f"{small_font_pages} page(s) have font sizes below mobile readability threshold",
+            evidence=Evidence(url=ctx.base_url, value=small_font_pages),
+            recommendation="Ensure base font size is ≥16px. Small fonts trigger mobile usability errors in GSC.",
+            effort=Effort.S,
+            google_algo_ref="Mobile usability",
         ))
 
     score = score_from_findings(100, findings)

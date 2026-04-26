@@ -1,14 +1,14 @@
 {
   "schema_version": "1.0",
   "run": {
-    "id": "aud_51cdb97b19",
+    "id": "aud_79a71ddb8e",
     "domain": "example.com",
-    "started_at": "2026-04-23T07:18:08Z",
-    "finished_at": "2026-04-23T07:18:11Z",
-    "duration_ms": 2368,
+    "started_at": "2026-04-26T17:20:51Z",
+    "finished_at": "2026-04-26T17:20:53Z",
+    "duration_ms": 2053,
     "engine_version": "audit_engine@0.1.0",
     "urls_crawled": 1,
-    "urls_requested": 5,
+    "urls_requested": 1,
     "js_rendered": false,
     "warnings": []
   },
@@ -24,7 +24,9 @@
     "accessibility": 99,
     "topical_authority": 0,
     "serp": 84,
-    "aio": 99
+    "aio": 99,
+    "geo": 89,
+    "backlinks": 96
   },
   "signals": [
     {
@@ -96,7 +98,14 @@
         "xrobots_noindex_count": 0,
         "http_pages_count": 0,
         "missing_hsts_count": 1,
-        "canonical_samples": []
+        "canonical_samples": [],
+        "hreflang_pages": 0,
+        "hreflang_missing_self": 0,
+        "hreflang_missing_xdefault": 0,
+        "hreflang_broken_links": 0,
+        "missing_viewport_count": 0,
+        "small_font_pages": 0,
+        "narrow_touch_target_count": 0
       }
     },
     {
@@ -512,7 +521,77 @@
         "has_howto_schema": false,
         "article_count": 0,
         "articles_with_question_headings": 0,
-        "articles_with_tldr": 0
+        "articles_with_tldr": 0,
+        "paa_style_headings": 0,
+        "snippet_fit_passages": 0,
+        "snippet_unfit_passages": 0,
+        "authoritative_citation_links": 0
+      }
+    },
+    {
+      "name": "geo",
+      "score": 89,
+      "findings": [
+        {
+          "id": "geo.org.missing",
+          "severity": "P1",
+          "title": "No Organization schema on homepage \u2014 critical for entity recognition",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add Organization JSON-LD with name, url, logo, and sameAs array. LLMs use this for entity grounding.",
+          "effort": "S",
+          "google_algo_ref": "Knowledge Graph / LLM entity resolution"
+        },
+        {
+          "id": "geo.website_schema.missing",
+          "severity": "P3",
+          "title": "Homepage missing WebSite schema",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add WebSite JSON-LD with SearchAction. It signals the site's primary entity to search engines and LLMs.",
+          "effort": "S",
+          "google_algo_ref": "Entity signals / Structured data"
+        }
+      ],
+      "data": {
+        "article_pages": 0,
+        "articles_with_author": 0,
+        "articles_with_author_sameAs": 0,
+        "articles_with_visible_byline": 0,
+        "articles_with_definitive_statements": 0,
+        "authoritative_source_links": 0,
+        "articles_checked_for_structure": 0,
+        "has_website_schema": false
+      }
+    },
+    {
+      "name": "backlinks",
+      "score": 96,
+      "findings": [
+        {
+          "id": "backlinks.data.missing",
+          "severity": "P2",
+          "title": "No backlink data provided for off-page audit",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Export backlink data from Ahrefs/Moz/Majestic and pass it in crawl_meta['backlinks'] for automated analysis.",
+          "effort": "S",
+          "google_algo_ref": "Off-page signals / Link equity"
+        }
+      ],
+      "data": {
+        "backlinks_provided": 0,
+        "referring_domains_provided": 0,
+        "anchors_provided": 0
       }
     }
   ],
@@ -604,6 +683,20 @@
         "effort": "M",
         "google_algo_ref": "Entity / Knowledge Graph",
         "signal": "serp"
+      },
+      {
+        "id": "geo.org.missing",
+        "severity": "P1",
+        "title": "No Organization schema on homepage \u2014 critical for entity recognition",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add Organization JSON-LD with name, url, logo, and sameAs array. LLMs use this for entity grounding.",
+        "effort": "S",
+        "google_algo_ref": "Knowledge Graph / LLM entity resolution",
+        "signal": "geo"
       }
     ],
     "P2": [
@@ -690,6 +783,20 @@
         "effort": "L",
         "google_algo_ref": "Knowledge Graph",
         "signal": "serp"
+      },
+      {
+        "id": "backlinks.data.missing",
+        "severity": "P2",
+        "title": "No backlink data provided for off-page audit",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Export backlink data from Ahrefs/Moz/Majestic and pass it in crawl_meta['backlinks'] for automated analysis.",
+        "effort": "S",
+        "google_algo_ref": "Off-page signals / Link equity",
+        "signal": "backlinks"
       }
     ],
     "P3": [
@@ -809,6 +916,20 @@
         "effort": "M",
         "google_algo_ref": "AI Overviews / Rich Results: FAQ",
         "signal": "aio"
+      },
+      {
+        "id": "geo.website_schema.missing",
+        "severity": "P3",
+        "title": "Homepage missing WebSite schema",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add WebSite JSON-LD with SearchAction. It signals the site's primary entity to search engines and LLMs.",
+        "effort": "S",
+        "google_algo_ref": "Entity signals / Structured data",
+        "signal": "geo"
       }
     ]
   }

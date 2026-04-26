@@ -12,7 +12,7 @@ from .crawler import crawl
 from .fetcher import FetchResult, HttpFetcher, normalize_domain
 from .report import AuditReport, RunMeta, SignalResult, iso_now
 from .scoring import health_score
-from .signals import aio, content, cwv, eeat, headings, linkgraph, schema, technical, accessibility, serp, topical_authority
+from .signals import aio, content, cwv, eeat, headings, linkgraph, schema, technical, accessibility, serp, topical_authority, geo, backlinks
 
 
 @dataclass
@@ -52,6 +52,8 @@ SIGNAL_ORDER = [
     ("topical_authority", topical_authority),
     ("serp", serp),
     ("aio", aio),
+    ("geo", geo),
+    ("backlinks", backlinks),
 ]
 
 

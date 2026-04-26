@@ -11,8 +11,8 @@ The content pipeline transforms keyword opportunities into published, optimized,
 ## Pipeline
 
 ```
-keyword-research → content-strategist → on-page-seo → link-building
-     (discover)      (plan & brief)      (optimize)     (promote)
+keyword-research → content-strategist → on-page-seo → link-building → ai-surface-distribution
+     (discover)      (plan & brief)      (optimize)     (promote)       (llm-feed)
 ```
 
 ## Stage 1: Discovery (keyword-research)
@@ -96,6 +96,48 @@ keyword-research → content-strategist → on-page-seo → link-building
 - Outreach templates: [customized for this content]
 - Target links: [N links in first 60 days]
 - Promotion channels: [outreach, social, communities]
+```
+
+## Stage 5: AI Surface Distribution (aio-optimization + geo-optimization)
+
+**Trigger**: Content is published and link building is underway
+**Agents**: `aio-optimization` (lead), `geo-optimization` (support)
+**Actions**:
+- Generate Reddit post draft for relevant subreddits (via `tools/distribution/ai_surfaces.py`)
+- Generate Quora answer draft for related questions
+- Generate Perplexity Pages draft structure
+- Ensure FAQPage / HowTo schema is live on the content
+- Verify question-style H2s and TL;DR blocks are present
+- Submit to IndexNow / Indexing API for rapid discovery
+- Syndicate to community platforms that feed LLM training data
+
+**Output**:
+```markdown
+## AI Surface Distribution Plan for [Content Title]
+### Reddit
+- Subreddit: [r/...]
+- Post draft: [title + body]
+- Status: draft | posted | rejected
+
+### Quora
+- Target question: [question text]
+- Answer draft: [body]
+- Status: draft | posted
+
+### Perplexity Pages
+- Page structure: [markdown outline]
+- Sources included: [list]
+- Status: draft
+
+### Schema Verification
+- FAQPage present: [yes/no]
+- HowTo present: [yes/no]
+- Question headings: [count]
+- TL;DR block: [yes/no]
+
+### Indexing
+- IndexNow submitted: [yes/no]
+- Google Indexing API: [yes/no]
 ```
 
 ## Cycle Metrics

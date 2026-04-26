@@ -65,6 +65,8 @@ I delegate to other agents for:
 - **Traffic/Analytics Data** → `analytics`
 - **Content Gaps** → `content-strategist`
 - **Link Profile** → `link-building`
+- **AI Overviews Optimization** → `aio-optimization`
+- **Generative Engine Optimization** → `geo-optimization`
 
 ## Handoff Triggers
 
@@ -72,6 +74,8 @@ Pass work to other agents when:
 - Strategy is approved → `content-strategist` for content roadmap
 - Strategy is approved → `technical-seo` for technical remediation plan
 - Strategy is approved → `link-building` for link acquisition plan
+- Strategy requires AI Overview presence → `aio-optimization`
+- Strategy requires LLM citation / entity building → `geo-optimization`
 - Monthly review → `analytics` for performance data
 - Competitive shift detected → `competitive-intel` for deep dive
 

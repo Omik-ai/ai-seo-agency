@@ -90,6 +90,8 @@ What I need:
 - Need competitive content analysis → `competitive-intel`
 - Content is written, needs on-page optimization → `on-page-seo`
 - Content is published, needs link building → `link-building`
+- Content needs AI Overview / PAA optimization → `aio-optimization`
+- Content needs LLM citation / entity optimization → `geo-optimization`
 - Need traffic/engagement data for existing content → `analytics`
 - Strategic alignment check needed → `seo-strategist`
 

@@ -1,14 +1,14 @@
 # SEO Audit Report: example.com
 **Agent**: audit-engine@0.1.0
-**Date**: 2026-04-23
+**Date**: 2026-04-26
 **Client/Project**: example.com
 **Status**: Final
-**Run ID**: `aud_51cdb97b19`
+**Run ID**: `aud_79a71ddb8e`
 
 ## Executive Summary
-Crawled 1 of 5 URLs in 2.4s.
+Crawled 1 of 1 URLs in 2.1s.
 Overall health: **78/100**.
-Findings: 0 P0 · 6 P1 · 6 P2 · 8 P3.
+Findings: 0 P0 · 7 P1 · 7 P2 · 9 P3.
 
 ## Health Score
 | Category | Score |
@@ -51,6 +51,10 @@ _None._
   - URL: `https://example.com`  
   - Fix: Build brand signals (Organization schema, sameAs, social profiles) and earn branded mentions.  
   - Effort: M · Ref: Entity / Knowledge Graph
+- **[geo] No Organization schema on homepage — critical for entity recognition**  
+  - URL: `https://example.com`  
+  - Fix: Add Organization JSON-LD with name, url, logo, and sameAs array. LLMs use this for entity grounding.  
+  - Effort: S · Ref: Knowledge Graph / LLM entity resolution
 
 ## Medium Priority (P2) — Fix within 30 days
 - **[technical] robots.txt missing Sitemap: directive**  
@@ -77,6 +81,10 @@ _None._
   - URL: `https://example.com`  
   - Fix: Add Organization schema with sameAs links to social profiles. Submit to Wikidata/Wikipedia if notable.  
   - Effort: L · Ref: Knowledge Graph
+- **[backlinks] No backlink data provided for off-page audit**  
+  - URL: `https://example.com`  
+  - Fix: Export backlink data from Ahrefs/Moz/Majestic and pass it in crawl_meta['backlinks'] for automated analysis.  
+  - Effort: S · Ref: Off-page signals / Link equity
 
 ## Low Priority (P3) — Fix within 90 days
 - **[technical] HSTS header missing on most pages**  
@@ -111,8 +119,13 @@ _None._
   - URL: `https://example.com`  
   - Fix: Add an FAQ section with FAQPage schema to pages answering common questions. High AI-Overview pull rate.  
   - Effort: M · Ref: AI Overviews / Rich Results: FAQ
+- **[geo] Homepage missing WebSite schema**  
+  - URL: `https://example.com`  
+  - Fix: Add WebSite JSON-LD with SearchAction. It signals the site's primary entity to search engines and LLMs.  
+  - Effort: S · Ref: Entity signals / Structured data
 
 ## Action Items
+- [ ] [Priority: High] [geo] No Organization schema on homepage — critical for entity recognition — Add Organization JSON-LD with name, url, logo, and sameAs array. LLMs use this for entity grounding.
 - [ ] [Priority: High] [content] Possible keyword stuffing ('domain' 20.0%) on https://example.com/ — Reduce keyword density to <3%. Use synonyms and natural language.
 - [ ] [Priority: High] [schema] Homepage missing Organization (or LocalBusiness) schema — Add Organization JSON-LD with name, url, logo, sameAs (social profiles).
 - [ ] [Priority: High] [serp] Domain not in top 10 for brand query 'example' — Build brand signals (Organization schema, sameAs, social profiles) and earn branded mentions.
@@ -121,13 +134,12 @@ _None._
 - [ ] [Priority: High] [technical] No XML sitemap found — Generate and submit an XML sitemap (one URL per indexable page; <50k URLs per file).
 - [ ] [Priority: Medium] [content] Title too short (14 chars) on https://example.com/ — Expand title to 30–60 chars. Include primary keyword + brand.
 - [ ] [Priority: Medium] [content] Missing meta description on https://example.com/ — Add a 70–160 char meta description. Not a ranking factor, but boosts CTR.
+- [ ] [Priority: Medium] [backlinks] No backlink data provided for off-page audit — Export backlink data from Ahrefs/Moz/Majestic and pass it in crawl_meta['backlinks'] for automated analysis.
 - [ ] [Priority: Medium] [serp] No Knowledge Panel detected for brand query — Add Organization schema with sameAs links to social profiles. Submit to Wikidata/Wikipedia if notable.
 - [ ] [Priority: Medium] [technical] robots.txt missing Sitemap: directive — Add a `Sitemap: https://<domain>/sitemap.xml` line so crawlers discover your sitemap.
 - [ ] [Priority: Medium] [eeat] No Contact page or mailto: link found — Add a /contact page with business email + physical address. Basic trust signal.
 - [ ] [Priority: Medium] [eeat] No About page found — Add an /about page covering team, history, credentials. Expertise signal.
 - [ ] [Priority: Low] [headings] Missing semantic tags on https://example.com/: main, header, footer, nav — Wrap content in <main>, <header>, <footer>, <nav> tags. Helps Google's content extraction.
-- [ ] [Priority: Low] [cwv] Core Web Vitals check skipped (PSI disabled) — Re-run without --no-psi and with a PAGESPEED_API_KEY for CWV data.
-- [ ] [Priority: Low] [serp] No featured snippet detected for brand query — Add FAQPage schema and concise definitional paragraphs to capture featured snippets.
 ## Data Sources
 - HTTP fetch of 1 URLs (user-agent: SEOAuditEngine/0.1.0)
 - robots.txt + XML sitemap parse

@@ -138,6 +138,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--json-only", action="store_true", help="Skip markdown render")
     ap.add_argument("--strict", action="store_true", help="Exit 1 if health_score < 60")
     ap.add_argument("--no-state", action="store_true", help="Do not write state/tasks or update state/ledger")
+    ap.add_argument("--js-render", action="store_true", help="Use Playwright for real JS rendering (slower, more accurate for SPAs)")
     ap.add_argument("-v", "--verbose", action="store_true")
     args = ap.parse_args(argv)
 
@@ -152,6 +153,7 @@ def main(argv: list[str] | None = None) -> int:
         no_psi=args.no_psi,
         psi_key=args.psi_key,
         verbose=args.verbose,
+        js_render=args.js_render,
     )
 
     try:

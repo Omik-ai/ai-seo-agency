@@ -1,6 +1,8 @@
 """AuditEngine — orchestrates fetch → signals → score → emit."""
 from __future__ import annotations
 
+import importlib
+import pkgutil
 import re
 import time
 import uuid
@@ -9,10 +11,44 @@ from pathlib import Path
 from urllib.parse import urlparse
 
 from .crawler import crawl
-from .fetcher import FetchResult, HttpFetcher, normalize_domain
+from .fetcher import FetchResult, HttpFetcher, RenderedFetcher, normalize_domain
 from .report import AuditReport, RunMeta, SignalResult, iso_now
 from .scoring import health_score
-from .signals import aio, content, cwv, eeat, headings, linkgraph, schema, technical, accessibility, serp, topical_authority, geo, backlinks
+
+
+def _discover_signals() -> list[tuple[str, object]]:
+    """Auto-import all signal modules from tools/audit/signals/."""
+    from . import signals as signals_pkg
+    pkg_path = Path(signals_pkg.__file__).parent
+    discovered: dict[str, object] = {}
+    for finder, name, ispkg in pkgutil.iter_modules([str(pkg_path)]):
+        if ispkg or name.startswith("_"):
+            continue
+        try:
+            mod = importlib.import_module(f"{signals_pkg.__name__}.{name}")
+            if hasattr(mod, "check"):
+                discovered[name] = mod
+        except Exception:
+            continue
+    # Preferred order for known signals; unknown signals appended alphabetically
+    preferred = [
+        "technical", "headings", "schema", "cwv", "eeat",
+        "content", "linkgraph", "accessibility", "topical_authority",
+        "serp", "aio", "geo", "backlinks", "snippets", "images",
+    ]
+    ordered: list[tuple[str, object]] = []
+    seen = set()
+    for name in preferred:
+        if name in discovered:
+            ordered.append((name, discovered[name]))
+            seen.add(name)
+    for name in sorted(discovered):
+        if name not in seen:
+            ordered.append((name, discovered[name]))
+    return ordered
+
+
+SIGNAL_ORDER = _discover_signals()
 
 
 @dataclass
@@ -23,6 +59,7 @@ class EngineConfig:
     no_psi: bool = False
     psi_key: str | None = None
     verbose: bool = False
+    js_render: bool = False
 
 
 @dataclass
@@ -40,23 +77,6 @@ def log(cfg: EngineConfig, msg: str) -> None:
         print(f"[audit] {msg}", flush=True)
 
 
-SIGNAL_ORDER = [
-    ("technical", technical),
-    ("headings", headings),
-    ("schema", schema),
-    ("cwv", cwv),
-    ("eeat", eeat),
-    ("content", content),
-    ("linkgraph", linkgraph),
-    ("accessibility", accessibility),
-    ("topical_authority", topical_authority),
-    ("serp", serp),
-    ("aio", aio),
-    ("geo", geo),
-    ("backlinks", backlinks),
-]
-
-
 class AuditEngine:
     def __init__(self, config: EngineConfig):
         self.config = config
@@ -70,7 +90,8 @@ class AuditEngine:
         base, host = normalize_domain(cfg.domain_input)
         log(cfg, f"target: {base} (host={host})")
 
-        fetcher = HttpFetcher()
+        fetcher = RenderedFetcher() if cfg.js_render else HttpFetcher()
+        log(cfg, f"fetcher: {'playwright' if cfg.js_render else 'http'}")
         log(cfg, f"crawling up to {cfg.max_urls} URLs...")
         pages, crawl_meta = crawl(base, host, cfg.max_urls, fetcher)
         log(cfg, f"crawled {len(pages)} pages (seeded via {crawl_meta.get('seeded_from')})")
@@ -117,10 +138,10 @@ class AuditEngine:
                 started_at=started_at,
                 finished_at=finished_at,
                 duration_ms=duration_ms,
-                engine_version="audit_engine@0.1.0",
+                engine_version="audit_engine@0.2.0",
                 urls_crawled=len(pages),
                 urls_requested=cfg.max_urls,
-                js_rendered=False,
+                js_rendered=cfg.js_render,
                 warnings=ctx.warnings,
             ),
             health_score=hs,

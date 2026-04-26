@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "run": {
-    "id": "aud_79a71ddb8e",
+    "id": "aud_b9b00bd2d7",
     "domain": "example.com",
-    "started_at": "2026-04-26T17:20:51Z",
-    "finished_at": "2026-04-26T17:20:53Z",
-    "duration_ms": 2053,
-    "engine_version": "audit_engine@0.1.0",
+    "started_at": "2026-04-26T18:04:07Z",
+    "finished_at": "2026-04-26T18:04:09Z",
+    "duration_ms": 1712,
+    "engine_version": "audit_engine@0.2.0",
     "urls_crawled": 1,
     "urls_requested": 1,
     "js_rendered": false,
@@ -26,7 +26,10 @@
     "serp": 84,
     "aio": 99,
     "geo": 89,
-    "backlinks": 96
+    "backlinks": 96,
+    "snippets": 96,
+    "images": 100,
+    "logs": 0
   },
   "signals": [
     {
@@ -593,6 +596,61 @@
         "referring_domains_provided": 0,
         "anchors_provided": 0
       }
+    },
+    {
+      "name": "snippets",
+      "score": 96,
+      "findings": [
+        {
+          "id": "snippets.paa.none",
+          "severity": "P2",
+          "title": "No PAA-style question headings found across site",
+          "evidence": {
+            "url": "https://example.com",
+            "snippet": null,
+            "value": null
+          },
+          "recommendation": "Add H2s phrased as questions. Featured snippets and AI Overviews both extract from Q/A structures.",
+          "effort": "M",
+          "google_algo_ref": "Featured snippets / PAA"
+        }
+      ],
+      "data": {
+        "pages_checked": 1,
+        "pages_with_question_headings": 0,
+        "pages_with_definition_block": 0,
+        "pages_with_list_snippet": 0,
+        "pages_with_table_snippet": 0,
+        "definition_blocks": 0,
+        "list_blocks": 0,
+        "table_blocks": 0
+      }
+    },
+    {
+      "name": "images",
+      "score": 100,
+      "findings": [],
+      "data": {
+        "pages_checked": 0,
+        "total_images": 0,
+        "missing_alt": 0,
+        "empty_alt": 0,
+        "generic_alt": 0,
+        "missing_width_height": 0,
+        "not_lazy_loaded": 0,
+        "non_modern_format": 0,
+        "no_srcset": 0,
+        "bad_filename": 0,
+        "oversized_pages": 0
+      }
+    },
+    {
+      "name": "logs",
+      "score": null,
+      "findings": [],
+      "data": {
+        "skipped": "no log file found; set SEO_LOG_FILE or crawl_meta['log_file']"
+      }
     }
   ],
   "top_findings_by_priority": {
@@ -797,6 +855,20 @@
         "effort": "S",
         "google_algo_ref": "Off-page signals / Link equity",
         "signal": "backlinks"
+      },
+      {
+        "id": "snippets.paa.none",
+        "severity": "P2",
+        "title": "No PAA-style question headings found across site",
+        "evidence": {
+          "url": "https://example.com",
+          "snippet": null,
+          "value": null
+        },
+        "recommendation": "Add H2s phrased as questions. Featured snippets and AI Overviews both extract from Q/A structures.",
+        "effort": "M",
+        "google_algo_ref": "Featured snippets / PAA",
+        "signal": "snippets"
       }
     ],
     "P3": [

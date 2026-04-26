@@ -84,33 +84,54 @@ def _keyword_density(text: str) -> dict[str, float]:
 
 def _extract_entities(text: str) -> dict[str, list[str]]:
     """Extract named entities. Uses spaCy if available, falls back to regex heuristics."""
-    try:
-        import spacy
-        nlp = spacy.load("en_core_web_sm")
-        doc = nlp(text[:50000])  # cap to avoid memory issues
-        entities: dict[str, list[str]] = {}
-        for ent in doc.ents:
-            entities.setdefault(ent.label_, []).append(ent.text)
-        # Deduplicate
-        for k in entities:
-            entities[k] = list(dict.fromkeys(entities[k]))[:20]
-        return entities
-    except Exception:
-        pass
+    # Try spaCy first (cached at module level to avoid reloads)
+    _nlp = getattr(_extract_entities, "_nlp", None)
+    if _nlp is None:
+        try:
+            import spacy
+            _nlp = spacy.load("en_core_web_sm")
+            _extract_entities._nlp = _nlp
+        except Exception:
+            _extract_entities._nlp = False
+    if _nlp:
+        try:
+            doc = _nlp(text[:50000])  # cap to avoid memory issues
+            entities: dict[str, list[str]] = {}
+            for ent in doc.ents:
+                entities.setdefault(ent.label_, []).append(ent.text)
+            for k in entities:
+                entities[k] = list(dict.fromkeys(entities[k]))[:20]
+            return entities
+        except Exception:
+            pass
 
-    # Fallback regex NER
+    # Fallback regex NER (improved)
     entities: dict[str, list[str]] = {}
-    # Simple org detection: capitalized words before Inc, LLC, Ltd, etc.
-    orgs = re.findall(r"([A-Z][A-Za-z0-9&\s]+(?:Inc\.?|LLC|Ltd\.?|Corp\.?|Company|Co\.?|Group|Studio|Agency))", text)
+    # Organizations
+    orgs = re.findall(
+        r"([A-Z][A-Za-z0-9&\s]+(?:Inc\.?|LLC|Ltd\.?|Corp\.?|Company|Co\.?|Group|Studio|Agency|Labs|AI|Tech|Software|Platform|App))",
+        text,
+    )
     if orgs:
         entities["ORG"] = list(dict.fromkeys(orgs))[:10]
-    # Simple person: Capitalized Word Capitalized Word
+    # Persons: Capitalized Word Capitalized Word
     persons = re.findall(r"([A-Z][a-z]+\s[A-Z][a-z]+)", text)
     if persons:
-        # Filter out common false positives
         stop = {"The", "For", "And", "With", "From", "This", "That", "Each", "More", "Most", "Some", "Such", "Only", "Same", "Very", "Just", "But", "Not", "Nor", "Can", "Will", "Would", "Could", "Should", "May", "Might", "Must", "Shall", "Need", "Dare", "Ought", "Used", "Have", "Has", "Had", "Do", "Does", "Did", "Be", "Been", "Being", "Was", "Were", "Are", "Is", "Am"}
         filtered = [p for p in persons if p.split()[0] not in stop and p.split()[1] not in stop]
         entities["PERSON"] = list(dict.fromkeys(filtered))[:10]
+    # Money / amounts
+    money = re.findall(r"\$[\d,]+(?:\.\d{2})?(?:\s*(?:million|billion|thousand|M|B|K))?", text, re.I)
+    if money:
+        entities["MONEY"] = list(dict.fromkeys(money))[:10]
+    # Dates (simple)
+    dates = re.findall(r"\b(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+\d{1,2}(?:,\s+\d{4})?\b", text)
+    if dates:
+        entities["DATE"] = list(dict.fromkeys(dates))[:10]
+    # Percentages
+    percents = re.findall(r"\b\d{1,3}(?:\.\d+)?%", text)
+    if percents:
+        entities["PERCENT"] = list(dict.fromkeys(percents))[:10]
     return entities
 
 
